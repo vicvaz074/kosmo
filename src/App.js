@@ -133,7 +133,7 @@ function MainPage() {
         <img src={earth} alt="Media planeta" className="earth" />
       </div>
       <div id="nosotros" className="section-nosotros">
-        <h2>Quiénes Somos en KOSMO</h2>
+        <h2>Quiénes Somos en KOSMOS</h2>
         <p>Revolucionando la interacción digital con la inteligencia de los chatbots</p>
 
         <div className="horizontal-scroll">

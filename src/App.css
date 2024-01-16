@@ -273,4 +273,72 @@ body, .main-page {
   margin-top: 20px;
 }
 
-/* Asegúrate de que los estilos de testimonios y conclusión se ajusten al nuevo diseño */
+
+.login-container {
+  position: relative;
+  height: 100vh; /* Ajusta al viewport o al contenido */
+  width: 100vw;
+  overflow: hidden;
+  background-color: #1b1360;
+  z-index: -1;
+}
+
+.login-video {
+  position: absolute;
+  /* Cambiar top y left a 50% y usar transform para centrar perfectamente el video */
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-55%, -50%);
+  object-fit: cover;
+  z-index: -1;
+  }
+  
+  @media (max-width: 768px) {
+    .login-video {
+      width: 150%; /* Asegúrate de que el video ocupe todo el ancho del contenedor */
+      height: auto; /* Mantiene la relación de aspecto del video */
+      left: 50%;
+      top: 50%;
+      /* Escala el video a un tamaño más pequeño, por ejemplo, al 50% de su tamaño original */
+      transform: translate(-50%, -50%) scale(0.7);
+    }
+  }
+  
+  
+  
+  
+
+.landing-animation {
+  position: absolute;
+  left: 50%;
+  /* Posiciona el texto más abajo en la pantalla, por ejemplo, al 70% del alto de la pantalla. */
+  top: 85%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.5em; /* Ajusta el tamaño del texto según sea necesario. */
+  z-index: 10;
+  animation: landingAnimation 2s ease-in-out infinite;
+}
+
+/* Media queries para ajustar el video y el texto para dispositivos móviles. */
+@media (max-width: 768px) {
+  .landing-animation {
+    font-size: 1em; /* Reduce el tamaño del texto en dispositivos móviles. */
+    top: 90%; /* Posiciona el texto aún más abajo en dispositivos móviles. */
+  }
+}
+
+@keyframes landingAnimation {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -60%) scale(1.2);
+    opacity: 0.5;
+  }
+}
