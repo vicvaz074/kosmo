@@ -133,34 +133,30 @@ function MainPage() {
         <img src={earth} alt="Media planeta" className="earth" />
       </div>
       <div id="nosotros" className="section-nosotros">
-      <h2>Estrategia Trifásica de KOSMOS: Revolucionando la Era de los Chatbots</h2>
-      <video src={aboutVideo} controls className="about-video"></video>
+        <h2>Quiénes Somos en KOSMOS</h2>
+        <p>Revolucionando la interacción digital con la inteligencia de los chatbots</p>
 
-      <div className="etapa-container">
-        <div className="etapa">
-          <h3>Primera Etapa: Introducción y Penetración en el Mercado</h3>
-          <p>Establecer Presencia: Posicionar a KOSMOS como un referente innovador...</p>
-          {/* Más contenido de la Primera Etapa */}
+        <div className="horizontal-scroll">
+          <div className="about-item">
+            <h3>La Importancia de los Bots</h3>
+            <p>En KOSMOS, entendemos que los chatbots son más que simples programas...</p>
+          </div>
+          <div className="about-item">
+            <h3>Origen de Nuestra Idea</h3>
+            <p>La idea de KOSMOS surgió de una necesidad clara...</p>
+          </div>
+          <div className="about-item">
+            <h3>Nuestro Equipo</h3>
+            <p>Compuesto por innovadores, desarrolladores, y creativos...</p>
+          </div>
         </div>
 
-        <div className="etapa">
-          <h3>Segunda Etapa: Consolidación y Expansión del Servicio</h3>
-          <p>Enfoque en Diseño y Storytelling: Mover el foco hacia la creación...</p>
-          {/* Más contenido de la Segunda Etapa */}
+        <div className="video-section">
+          <video src={aboutVideo} controls className="about-video"></video>
         </div>
 
-        <div className="etapa">
-          <h3>Tercera Etapa: Personalización y Emotividad en el Diseño</h3>
-          <p>Personalización Profunda: Convertir el diseño de chatbots en una experiencia...</p>
-          {/* Más contenido de la Tercera Etapa */}
-        </div>
+        {/* Testimonios y Conclusión aquí */}
       </div>
-
-      <div className="conclusion">
-        <h3>Conclusión</h3>
-        <p>La estrategia trifásica de KOSMOS no solo sitúa a la marca como un pionero...</p>
-      </div>
-    </div>
 
       <div id="planes">
         {/* Aquí va el contenido de la sección Planes */}

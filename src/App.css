@@ -242,51 +242,35 @@ body, .main-page {
 }
 
 .section-nosotros {
-  background-color: white;
-  color: #262EC9;
-  padding: 40px;
   text-align: center;
+  padding: 40px;
+  background-color: #ffffff;
+  color: #262EC9;
 }
 
-.section-nosotros h2, .section-nosotros h3 {
+.section-nosotros h2 {
   color: #7AC943;
+}
+
+.horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px 0;
+}
+
+.about-item {
+  min-width: 300px;
+  margin-right: 20px;
+  padding: 20px;
+  background: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .about-video {
   max-width: 80%;
   border-radius: 10px;
-  margin: 20px auto;
+  margin-top: 20px;
 }
 
-.etapa-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.etapa {
-  background: #f4f4f4;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  border-radius: 10px;
-  width: 80%;
-  margin: 10px 0;
-}
-
-.etapa:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.conclusion {
-  background: #e8e8e8;
-  padding: 20px;
-  margin-top: 30px;
-  border-radius: 10px;
-}
-
-/* Agrega transiciones suaves para hover */
-.etapa, .conclusion {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+/* Asegúrate de que los estilos de testimonios y conclusión se ajusten al nuevo diseño */
