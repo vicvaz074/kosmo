@@ -6,6 +6,7 @@ import './App.css';
 import LoginComponent from './LoginComponent';
 import RegisterComponent from './RegisterComponent';
 import logo from './assets/img/LOGO_AZULOSC.svg';
+import logoWhite from './assets/img/LOGO_BLANCO.svg';
 import kosmoLogo from './assets/img/KOSMO_AZUL.svg';
 import kosmoOxxo from './assets/img/KOSMO_OXXO.svg';
 import kosmoBasic from './assets/img/KOSMO_BASICO.png';

@@ -85,7 +85,8 @@ body, .main-page {
 .main-content p {
   color: #262EC9; /* Color azul */
   font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
-  font-size: 30px; /* Tamaño de fuente grande para pantallas más amplias */
+  font-size: 22px; /* Tamaño de fuente grande para pantallas más amplias */
+  font-style: italic;
   animation: fadeInUp 2s ease-in-out; /* Mantén la animación si es necesaria */
 }
 
@@ -152,7 +153,6 @@ body, .main-page {
 
 .kosmo-logo {
   animation: fadeInDown 1s ease-out;
-  /* ... estilos existentes ... */
 }
 
 @keyframes fadeInDown {
@@ -373,7 +373,8 @@ body, .main-page {
 }
 
 .nosotros-title {
-  color: #262EC9;
+  color: #262EC9; /* Color azul */
+  font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
   font-size: 2rem;
   margin-top: 1rem;
   margin-bottom: 4rem;
@@ -409,7 +410,8 @@ body, .main-page {
 
 .strategy-title {
   font-size: 1.8rem;
-  color: #262EC9;
+  color: #262EC9; /* Color azul */
+  font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
   margin-bottom: 2rem;
 }
 
@@ -425,12 +427,14 @@ body, .main-page {
 }
 
 .strategy-point h5 {
-  color: #262EC9;
+  color: #262EC9; /* Color azul */
+  font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
   margin-bottom: 0.5rem;
 }
 
 .strategy-point p {
   color: #6c757d;
+  font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
 }
 
 /* Animaciones */
@@ -452,7 +456,8 @@ body, .main-page {
   /* Estilos para las tarjetas de los planes */
   .planes-section h3 {
   font-size: 2rem;
-  color: #1B1464;
+  color: #262EC9; /* Color azul */
+  font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
   margin-bottom: 2rem;
   }
   
@@ -489,13 +494,15 @@ body, .main-page {
   }
   
   .card-title {
-  color: #262EC9;
+  color: #262EC9; /* Color azul */
+  font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
   }
   
   .card-text {
   color: #6c757d;
+  font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
   font-size: 1rem;
   }
   
