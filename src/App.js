@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import LoginComponent from './LoginComponent';
 import RegisterComponent from './RegisterComponent';
-import logo from './assets/img/RESPONSIVE_AZUL.png';
+import logo from './assets/img/LOGO_AZULOSC.svg';
 import kosmoLogo from './assets/img/KOSMO_AZUL.svg';
-import earth from './assets/img/TIERRA.png';
+import kosmoOxxo from './assets/img/KOSMO_OXXO.svg';
+import kosmoBasic from './assets/img/KOSMO_BASICO.png';
+import kosmoConstructor from './assets/img/KOSMO_CONSTRUCTOR.svg';
+import earth from './assets/img/PLANETA.png';
 import ship from './assets/img/NAVE.png';
 import aboutVideo from './assets/videos/NOSOTROS.mp4';
+import Carousel from 'react-bootstrap/Carousel';
 
 function App() {
   const [isHovering, setIsHovering] = useState(false);
@@ -94,6 +99,32 @@ function App() {
 }
 
 function MainPage() {
+  const location = useLocation();
+  useEffect(() => {
+    const handleScrollToSection = () => {
+      const { hash } = window.location;
+      if (hash !== '') {
+        // Esperar hasta que el DOM esté listo
+        setTimeout(() => {
+          const section = document.querySelector(hash);
+          if (section) {
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const position = section.offsetTop - navbarHeight;
+            window.scrollTo({
+              top: position,
+              behavior: 'smooth',
+            });
+          }
+        }, 0);
+      }
+    };
+
+    // Llamar a handleScrollToSection si estamos en la página de inicio
+    if (location.pathname === '/') {
+      handleScrollToSection();
+    }
+  }, [location]);
+  
   useEffect(() => {
     const starsContainer = document.querySelector('.stars-container');
     createStars(starsContainer, 100);
@@ -119,9 +150,9 @@ function MainPage() {
   return (
     <div className="main-page">
       <div id="inicio" className="main-content">
-        <img src={kosmoLogo} alt="Kosmo Logo" className="kosmo-logo" style={{ width: '700px' }} />
-        <h2>CONOCE Y ÚNETE A KOSMO</h2>
-        <p>Un chatbot de otro planeta</p>
+        <img src={kosmoLogo} alt="Kosmo Logo" className="kosmo-logo" style={{ width: '900px' }} />
+        <h2>UN CHATBOT DE OTRO PLANETA</h2>
+        <p>Únete y conócelo</p>
         <button className="button">Hablar con Kosmo</button>
         {/* Aquí puedes agregar más contenido para la sección Inicio */}
       </div>
@@ -133,36 +164,57 @@ function MainPage() {
         <img src={earth} alt="Media planeta" className="earth" />
       </div>
       <div id="nosotros" className="section-nosotros">
-        <h2>Quiénes Somos en KOSMOS</h2>
-        <p>Revolucionando la interacción digital con la inteligencia de los chatbots</p>
-
-        <div className="horizontal-scroll">
-          <div className="about-item">
-            <h3>La Importancia de los Bots</h3>
-            <p>En KOSMOS, entendemos que los chatbots son más que simples programas...</p>
-          </div>
-          <div className="about-item">
-            <h3>Origen de Nuestra Idea</h3>
-            <p>La idea de KOSMOS surgió de una necesidad clara...</p>
-          </div>
-          <div className="about-item">
-            <h3>Nuestro Equipo</h3>
-            <p>Compuesto por innovadores, desarrolladores, y creativos...</p>
+        <h2 className="nosotros-title">¿QUIÉNES SOMOS? CONOCE NUESTRA HISTORIA Y ÚNETE A NUESTRA ESTRATEGIA</h2>
+        <Carousel>
+          <Carousel.Item>
+            <video className="d-block w-100" controls>
+              <source src={aboutVideo} type="video/mp4" />
+            </video>
+          </Carousel.Item>
+          <Carousel.Item>
+            <div className="carousel-strategy-container">
+              <h4 className="strategy-title">NUESTRA ESTRATEGIA TRIFÁSICA</h4>
+              <div className="strategy-point">
+                <h5>LA IMPORTANCIA DE LOS BOTS</h5>
+                <p>En Kosmo, entendemos que los chatbots son más que simples programas...</p>
+              </div>
+              <div className="strategy-point">
+                <h5>EL ORIGEN DE NUESTRA IDEA</h5>
+                <p>Kosmo nace de necesidad clara...</p>
+              </div>
+              <div className="strategy-point">
+                <h5>NUESTRO EQUIPO</h5>
+                <p>Compuesto por innovadores, desarrolladores y creativos...</p>
+              </div>
+            </div>
+          </Carousel.Item>
+        </Carousel>
+        <div id="planes" className="planes-section">
+          <h3>NUESTROS PLANES</h3>
+          <div className="planes-cards">
+            <div className="card">
+              <img src={kosmoBasic} className="card-img-top" alt="Kosmo Basic"/>
+              <div className="card-body">
+                <h5 className="card-title">KOSMO BASIC</h5>
+                <p className="card-text">Un chatbot personal, toda la inteligencia...</p>
+              </div>
+            </div>
+            <div className="card">
+              <img src={kosmoOxxo} className="card-img-top" alt="Kosmo Oxxo" />
+              <div className="card-body">
+                <h5 className="card-title">KOSMO PRO</h5>
+                <p className="card-text">Un chatbot personal, se pone la camiseta y aprovechas toda su inteligencia...</p>
+              </div>
+            </div>
+            <div className="card">
+              <img src={kosmoConstructor} className="card-img-top" alt="Kosmo Constructor" />
+              <div className="card-body">
+                <h5 className="card-title">KOSMO PRO PLUS</h5>
+                <p className="card-text">Un chatbot personalizable, se pone la camiseta y otra herramienta extra ;), con toda su inteligencia incluida.</p>
+              </div>
+            </div>
           </div>
         </div>
-
-        <div className="video-section">
-          <video src={aboutVideo} controls className="about-video"></video>
-        </div>
-
-        {/* Testimonios y Conclusión aquí */}
-      </div>
-
-      <div id="planes">
-        {/* Aquí va el contenido de la sección Planes */}
-      </div>
-      <div id="contactanos">
-        {/* Aquí va el contenido de la sección Contáctanos */}
       </div>
       <div className="footer">
         <p>© Kosmo. Todos los derechos reservados.</p>
