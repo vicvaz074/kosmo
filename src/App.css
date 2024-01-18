@@ -93,7 +93,7 @@ body, .main-page {
 /* Media query para pantallas de tamaño máximo de 768px (tablets y teléfonos) */
 @media (max-width: 768px) {
   .main-content p {
-    font-size: 18px; /* Tamaño más pequeño para pantallas más pequeñas */
+    font-size: 19px; /* Tamaño más pequeño para pantallas más pequeñas */
   }
 }
 

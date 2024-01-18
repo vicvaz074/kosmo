@@ -155,7 +155,6 @@ function MainPage() {
         <h2>UN CHATBOT DE OTRO PLANETA</h2>
         <p>Únete y conócelo</p>
         <button className="button">Hablar con Kosmo</button>
-        {/* Aquí puedes agregar más contenido para la sección Inicio */}
       </div>
       <div className="space-container">
         <div className="stars-container"></div>
@@ -167,7 +166,7 @@ function MainPage() {
       <div id="nosotros" className="section-nosotros">
         <h2 className="nosotros-title">¿QUIÉNES SOMOS? CONOCE NUESTRA HISTORIA Y ÚNETE A NUESTRA ESTRATEGIA</h2>
         <Carousel>
-          <Carousel.Item>
+        <Carousel.Item interval={null}>
             <video className="d-block w-100" controls>
               <source src={aboutVideo} type="video/mp4" />
             </video>
