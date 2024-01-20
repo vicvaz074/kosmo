@@ -6,10 +6,9 @@ import './App.css';
 import LoginComponent from './LoginComponent';
 import RegisterComponent from './RegisterComponent';
 import logo from './assets/img/LOGO_AZULOSC.svg';
-import logoWhite from './assets/img/LOGO_BLANCO.svg';
 import kosmoLogo from './assets/img/KOSMO_AZUL.svg';
 import kosmoOxxo from './assets/img/KOSMO_OXXO.svg';
-import kosmoBasic from './assets/img/KOSMO_BASICO.png';
+import kosmoBasic from './assets/img/KOSMO_BASICO.svg';
 import kosmoConstructor from './assets/img/KOSMO_CONSTRUCTOR.svg';
 import earth from './assets/img/PLANETA.png';
 import ship from './assets/img/NAVE.png';
@@ -88,7 +87,7 @@ function App() {
               </li>
             </ul>
           </div>
-          </div>
+        </div>
       </nav>
       <Routes>
         <Route path="/" element={<MainPage />} />
@@ -101,11 +100,16 @@ function App() {
 
 function MainPage() {
   const location = useLocation();
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleSelect = (selectedIndex, e) => {
+    setActiveIndex(selectedIndex);
+  };
+
   useEffect(() => {
     const handleScrollToSection = () => {
       const { hash } = window.location;
       if (hash !== '') {
-        // Esperar hasta que el DOM esté listo
         setTimeout(() => {
           const section = document.querySelector(hash);
           if (section) {
@@ -120,7 +124,6 @@ function MainPage() {
       }
     };
 
-    // Llamar a handleScrollToSection si estamos en la página de inicio
     if (location.pathname === '/') {
       handleScrollToSection();
     }
@@ -165,8 +168,8 @@ function MainPage() {
       </div>
       <div id="nosotros" className="section-nosotros">
         <h2 className="nosotros-title">¿QUIÉNES SOMOS? CONOCE NUESTRA HISTORIA Y ÚNETE A NUESTRA ESTRATEGIA</h2>
-        <Carousel>
-        <Carousel.Item interval={null}>
+        <Carousel activeIndex={activeIndex} onSelect={handleSelect} interval={null}>
+          <Carousel.Item>
             <video className="d-block w-100" controls>
               <source src={aboutVideo} type="video/mp4" />
             </video>
@@ -210,7 +213,7 @@ function MainPage() {
               <img src={kosmoConstructor} className="card-img-top" alt="Kosmo Constructor" />
               <div className="card-body">
                 <h5 className="card-title">KOSMO PRO PLUS</h5>
-                <p className="card-text">Un chatbot personalizable, se pone la camiseta y otra herramienta extra ;), con toda su inteligencia incluida.</p>
+                <p className="card-text">Un chatbot personalizable, se pone la camiseta y otra herramienta extra, con toda su inteligencia incluida.</p>
               </div>
             </div>
           </div>
