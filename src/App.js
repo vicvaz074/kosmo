@@ -13,33 +13,7 @@ import kosmoConstructor from './assets/img/KOSMO_CONSTRUCTOR.svg';
 import earth from './assets/img/PLANETA.png';
 import ship from './assets/img/NAVE.png';
 import aboutVideo from './assets/videos/NOSOTROS.mp4';
-import thumbnail from './assets/img/MINIATURA.svg';
 import Carousel from 'react-bootstrap/Carousel';
-
-function VideoWithThumbnail({ videoSrc, thumbnailSrc }) {
-  const [playVideo, setPlayVideo] = useState(false);
-
-  const handlePlayVideo = () => {
-    setPlayVideo(true);
-  };
-
-  return (
-    <div className="video-container">
-      {playVideo ? (
-        <video className="d-block w-100" controls autoPlay>
-          <source src={videoSrc} type="video/mp4" />
-        </video>
-      ) : (
-        <img 
-          src={thumbnailSrc} 
-          alt="Video Thumbnail" 
-          className="video-thumbnail" 
-          onClick={handlePlayVideo}
-        />
-      )}
-    </div>
-  );
-}
 
 function App() {
   const [isHovering, setIsHovering] = useState(false);
@@ -126,6 +100,12 @@ function App() {
 
 function MainPage() {
   const location = useLocation();
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleSelect = (selectedIndex, e) => {
+    setActiveIndex(selectedIndex);
+  };
+
   useEffect(() => {
     const handleScrollToSection = () => {
       const { hash } = window.location;
@@ -188,9 +168,11 @@ function MainPage() {
       </div>
       <div id="nosotros" className="section-nosotros">
         <h2 className="nosotros-title">¿QUIÉNES SOMOS? CONOCE NUESTRA HISTORIA Y ÚNETE A NUESTRA ESTRATEGIA</h2>
-        <Carousel>
+        <Carousel activeIndex={activeIndex} onSelect={handleSelect} interval={null}>
           <Carousel.Item>
-            <VideoWithThumbnail videoSrc={aboutVideo} thumbnailSrc={thumbnail} />
+            <video className="d-block w-100" controls>
+              <source src={aboutVideo} type="video/mp4" />
+            </video>
           </Carousel.Item>
           <Carousel.Item>
             <div className="carousel-strategy-container">
