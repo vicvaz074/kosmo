@@ -1,31 +1,97 @@
 .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: right;
   background-color: #1B1464 ;
   overflow: hidden;
-  position: fixed;
   width: 100%;
+  font-family: 'IBM Plex Mono', monospace;
   top: 0;
   z-index: 1000;
 }
 
 .navbar-logo {
-  border-radius: 50%;
-  background-color: white;
-  padding: 5px;
+  display: flex;
+  align-items: left;
 }
 
-/* Estilos para enlaces de navegación en estado normal */
-.navbar a {
+.navbar-menu {
+  display: flex;
+  align-items: right;
+}
+
+.navbar-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-menu li {
+  margin-left: 20px;
+}
+
+.navbar-menu a {
   display: block;
   color: white;
   text-align: center;
-  font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
+  font-family: 'IBM Plex Mono', monospace;
   padding: 14px 16px;
   text-decoration: none;
-  background-color: #1B1464; /* Color de fondo */
-  border-radius: 5px; /* Sin bordes redondeados */
+  background-color: #1B1464;
+  border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.navbar-menu a:hover {
+  background-color: #262EC9;
+  color: white;
+  border-radius: 20px;
+  padding: 12px 14px;
+
+}
+
+.main-content {
+  text-align: center;
+  padding: 15px;
+  margin-top: 70px; /* Add margin top to avoid overlap with the navbar */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .navbar-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #1B1464;
+    flex-direction: column;
+    padding: 10px;
+    z-index: 1001;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .navbar-menu.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navbar-menu ul {
+    flex-direction: row;
+    margin-top: 10px;
+  }
+
+  .navbar-menu li {
+    margin: 0;
+  }
+
+  .navbar-menu a {
+    padding: 10px 20px;
+  }
+}
 /* Estilos para enlaces de navegación en estado hover */
 .navbar a:hover {
   background-color: #262EC9; /* Color de fondo al pasar el cursor */
@@ -35,26 +101,12 @@
   transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.3s ease, padding 0.3s ease;
 }
 
-
-.main-logo {
-  background: white;
-  border-radius: 50%;
-  padding: 10px;
-  width: 50px;
-  height: 50px;
-}
-
 body, .main-page {
   background-color: white;
   margin: 0;
-  padding-top: 60px;
-  font-family: Arial, sans-serif;
+  padding-top: 10px;
 }
 
-.main-content {
-  text-align: center;
-  padding: 20px;
-}
 
 .main-content img {
   max-width: 100%;
@@ -128,19 +180,6 @@ body, .main-page {
   }
 }
 
-.footer {
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  background: rgba(255, 255, 255, 0.4);
-  color: #262EC9;
-  padding: 4px;
-  font-size: 1em;
-  z-index: 1000;
-}
-
 
 
 .brand-logo {
@@ -151,6 +190,7 @@ body, .main-page {
   object-fit: contain; /* Asegura que la imagen se ajuste dentro del círculo */
   padding: 5px; /* Ajusta la cantidad de fondo blanco alrededor de la imagen */
 }
+
 
 .kosmo-logo {
   animation: fadeInDown 1s ease-out;
@@ -184,8 +224,8 @@ body, .main-page {
 
 
 .space-container {
-  width: 90vw; /* Tamaño relativo al ancho de la vista */
-  height: 90vw; /* Tamaño relativo al ancho de la vista */
+  width: 65vw; /* Tamaño relativo al ancho de la vista */
+  height: 65vw; /* Tamaño relativo al ancho de la vista */
   max-width: 1500px; /* Máximo tamaño para evitar que sea demasiado grande */
   max-height: 1500px; 
   border-radius: 50%;
@@ -202,7 +242,7 @@ body, .main-page {
 
 .earth {
   margin: 240px auto;
-  width: 75%; /* Ajusta al tamaño deseado */
+  width: 88%; /* Ajusta al tamaño deseado */
   z-index: 4; /* Asegúrate de que este z-index sea mayor que el del espacio */
   animation: zoomIn 1s ease-out;
 }
@@ -213,15 +253,15 @@ body, .main-page {
     opacity: 0;
   }
   to {
-    transform: scale(1);
+    transform: scale(0.8);
     opacity: 1;
   }
 }
 
 .ship { /* Ahora .moon es la nave espacial */
-  width: 10vw; /* Tamaño relativo al ancho de la vista */
+  width: 8vw; /* Tamaño relativo al ancho de la vista */
   max-width: 110px; /* Tamaño máximo */
-  min-width: 20px; /* Tamaño mínimo */
+  min-width: 30px; /* Tamaño mínimo */
   height: auto; /* Para mantener la proporción */
   position: absolute;
   top: 0;
@@ -377,6 +417,7 @@ body, .main-page {
   color: #262EC9; /* Color azul */
   font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
   font-size: 2rem;
+  font-style: bold;
   margin-top: 1rem;
   margin-bottom: 4rem;
   animation: fadeInDown 1s both;
@@ -436,6 +477,7 @@ body, .main-page {
 .strategy-point p {
   color: #6c757d;
   font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
+  font-style: light;
 }
 
 /* Animaciones */
@@ -485,7 +527,7 @@ body, .main-page {
   
   .card-img-top {
     width: 100%; /* mantiene el ancho al 100% del contenedor de la tarjeta */
-    height: 750px; /* reduce la altura de la imagen */
+    height: 550px; /* reduce la altura de la imagen */
     object-fit: fill; /* asegura que la imagen cubra todo el espacio asignado sin distorsionarse */
   }
   
@@ -498,12 +540,14 @@ body, .main-page {
   color: #262EC9; /* Color azul */
   font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
   font-size: 1.25rem;
+  font-style: bold;
   margin-bottom: 0.5rem;
   }
   
   .card-text {
   color: #6c757d;
   font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
+  font-style: light;
   font-size: 1rem;
   }
   
@@ -529,10 +573,78 @@ body, .main-page {
   .card {
   width: 100%;
   }
-  
-  .card-img-top {
-  height: 465px;
-  }
   }
 
-  
+
+.navbar-menu {
+  justify-content: flex-end;
+}
+
+.brand-logo {
+  height: 80%; /* Reducción del tamaño del logo */
+}
+
+.earth {
+  transform: scale(0.8); /* Reducción del tamaño del planeta */
+}
+
+.ship {
+  transform: scale(0.8); /* Reducción del tamaño de la nave */
+}
+
+.about-video, .section-nosotros, .planes-section {
+    max-width: 1200px; /* o el ancho máximo que prefieras */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px; /* Ajusta el relleno según sea necesario */
+}
+
+.about-video video {
+    max-width: 100%;
+    height: auto; /* Mantiene la relación de aspecto del video */
+}
+
+.brand-logo {
+    display: inline-block;
+    border-radius: 50%; /* o el valor que prefieras */
+    overflow: hidden;
+    width: 40px; /* Ajusta el ancho según sea necesario */
+    height: 40px; /* Ajusta la altura según sea necesario */
+}
+
+.brand-logo img {
+    width: 100%;
+    height: auto;
+}
+.navbar-nav {
+  margin-left: auto; /* Asegura que los elementos de la lista se muevan a la derecha */
+}
+
+.navbar-brand {
+  flex-grow: 1; /* Permite que el logotipo ocupe el espacio necesario a la izquierda */
+  justify-content: flex-start;
+}
+
+.navbar-nav .nav-item {
+  margin-left: 8px; /* Aumenta el espacio entre cada elemento de la lista */
+  margin-right: 10px;
+}
+
+.kosmo-logo {
+  padding-top: 60px; /* Aumentar el espacio superior */
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.4);
+  color: #262EC9;
+  width: 100%;
+  text-align: center;
+  z-index: 1000;
+}
+
+.main-content {
+  padding-bottom: 0px; /* Ajustar según la altura del footer */
+}
