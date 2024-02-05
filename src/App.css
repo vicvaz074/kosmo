@@ -418,6 +418,7 @@ body, .main-page {
   font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
   font-size: 2rem;
   font-style: bold;
+  font-weight: 700;
   margin-top: 1rem;
   margin-bottom: 4rem;
   animation: fadeInDown 1s both;
@@ -499,8 +500,10 @@ body, .main-page {
   /* Estilos para las tarjetas de los planes */
   .planes-section h3 {
   font-size: 2rem;
+  text-align: center;
   color: #262EC9; /* Color azul */
   font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
+  font-weight: 700;
   margin-bottom: 2rem;
   }
   
@@ -540,6 +543,7 @@ body, .main-page {
   color: #262EC9; /* Color azul */
   font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
   font-size: 1.25rem;
+  font-weight: 700;
   font-style: bold;
   margin-bottom: 0.5rem;
   }
@@ -648,3 +652,120 @@ body, .main-page {
 .main-content {
   padding-bottom: 0px; /* Ajustar según la altura del footer */
 }
+
+
+/* Estilos para la sección de personalización de Kosmo */
+.customization-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f0f0; /* Fondo claro para la sección, ajusta esto según tu diseño */
+  position: relative;
+  z-index: 2;
+}
+
+.customization-section h2 {
+  color: #262EC9; /* Color azul */
+  font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
+  font-style: italic;
+  margin-bottom: 1rem; /* Espacio debajo del título */
+  font-size: 2rem; /* Tamaño del título */
+  font-weight: 700;
+}
+
+.kosmo-customization-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  gap: 120px; /* Espacio entre los elementos de la sección */
+  margin-top: 2.5rem; /* Espacio por encima de la sección de personalización */
+}
+
+.kosmo-customization-section button {
+  border: none;
+  background: none;
+  font-size: 4rem; /* Tamaño de los botones */
+  cursor: pointer;
+  color: #1B1464;
+}
+
+.kosmo-bot {
+  height: 320px; /* Ajusta esto según el tamaño que deseas para las imágenes */
+  width: auto;
+  transform: translateY(20%);
+  z-index: 4;
+}
+
+.kosmo-outfit {
+  height: 330px; /* Ajusta esto según el tamaño que deseas para las imágenes */
+  width: auto;
+  position: absolute;
+  left: 17%;
+  bottom: 0%;
+  transform: translateX(0%);
+  z-index: 5;
+}
+
+.customization-description {
+  color: #262EC9; /* Color azul */
+  font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
+  font-style: italic;
+  margin-top: 2rem; /* Espacio por encima de la descripción */
+  font-size: 1.2rem; /* Tamaño de la descripción */
+}
+
+.service-notice {
+  display: block; /* Asegura que la nota de servicio esté en su propia línea */
+  color: #7AC943;
+  font-family: 'IBM Plex Mono', monospace;
+  font-style: italic; /* Estilo de fuente para la nota de servicio */
+  font-size: 0.85rem; /* Tamaño de la nota de servicio */
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.side-outfit {
+  position: static; /* Restablece la posición para los outfits laterales */
+  opacity: 0.6; /* Hace que los outfits laterales sean menos prominentes */
+}
+
+.center-outfit {
+  position: relative;
+}
+
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+  .kosmo-customization-section {
+    height: 30px;
+    width: 330px;
+    gap: 20px; /* Espacio entre los elementos de la sección */
+    margin-top: 6rem; /* Espacio por encima de la sección de personalización */
+  }
+  .kosmo-bot,
+  .kosmo-outfit {
+    height: 90px; /* Tamaño más pequeño para dispositivos móviles */
+  }
+
+  .kosmo-customization-section button {
+    border: none;
+    background: none;
+    font-size: 2rem; /* Tamaño de los botones */
+    cursor: pointer;
+    color: #1B1464;
+  }
+  .customization-section h2 {
+    font-size: 1.5rem; /* Tamaño más pequeño para el título en dispositivos móviles */
+  }
+
+  .customization-description {
+    font-size: 0.9rem; /* Tamaño más pequeño para la descripción y la nota de servicio en dispositivos móviles */
+    margin-top: 6rem; /* Espacio por encima de la sección de personalización */
+  }
+  .service-notice {
+    font-size: 0.9rem; /* Tamaño más pequeño para la descripción y la nota de servicio en dispositivos móviles */
+    margin-top: 1rem; /* Espacio por encima de la sección de personalización */
+
+  }
+}
+

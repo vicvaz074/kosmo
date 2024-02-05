@@ -14,6 +14,33 @@ import earth from './assets/img/PLANETA.png';
 import ship from './assets/img/NAVE.png';
 import aboutVideo from './assets/videos/NOSOTROS.mp4';
 import Carousel from 'react-bootstrap/Carousel';
+import kosmoBotBasico from './assets/img/KOSMO_BOT_BASICO.svg';
+import outfitRed from './assets/img/CONJUNTO_ROJO.svg';
+import outfitBlue from './assets/img/CONJUNTO_AZUL.svg';
+import outfitYellow from './assets/img/CONJUNTO_AMARILLO.svg';
+
+
+const KosmoCustomizationComponent = () => {
+  const [outfitIndex, setOutfitIndex] = useState(0);
+  const outfits = [outfitRed, outfitBlue, outfitYellow];
+
+  const previousOutfitIndex = (outfitIndex - 1 + outfits.length) % outfits.length;
+  const nextOutfitIndex = (outfitIndex + 1) % outfits.length;
+
+  return (
+    <div className="kosmo-customization-section">
+      <button onClick={() => setOutfitIndex(previousOutfitIndex)}>{"<"}</button>
+      <img src={outfits[previousOutfitIndex]} alt="Previous Outfit" className="kosmo-outfit side-outfit" />
+      <div className="center-outfit">
+        <img src={kosmoBotBasico} alt="Kosmo Bot Básico" className="kosmo-bot" />
+        <img src={outfits[outfitIndex]} alt="Current Outfit" className="kosmo-outfit" />
+      </div>
+      <img src={outfits[nextOutfitIndex]} alt="Next Outfit" className="kosmo-outfit side-outfit" />
+      <button onClick={() => setOutfitIndex(nextOutfitIndex)}>{">"}</button>
+    </div>
+  );
+};
+
 
 function App() {
   const [isHovering, setIsHovering] = useState(false);
@@ -37,6 +64,8 @@ function App() {
   const toggleNav = () => {
     setNavExpanded(!navExpanded);
   };
+
+
 
   return (
     <Router>
@@ -98,6 +127,8 @@ function App() {
   );
 }
 
+
+
 function MainPage() {
   const location = useLocation();
   const [activeIndex, setActiveIndex] = useState(0);
@@ -151,47 +182,48 @@ function MainPage() {
     }
   }
 
-  return (
-    <div className="main-page">
-      <div id="inicio" className="main-content">
-        <img src={kosmoLogo} alt="Kosmo Logo" className="kosmo-logo" style={{ width: '900px' }} />
-        <h2>UN CHATBOT DE OTRO PLANETA</h2>
-        <p>Únete y conócelo</p>
-        <button className="button">Hablar con Kosmo</button>
-      </div>
-      <div className="space-container">
-        <div className="stars-container"></div>
-        <div className="ship-orbit">
-          <img src={ship} alt="Nave Espacial" className="ship" />
+    return (
+      <div className="main-page">
+        <div id="inicio" className="main-content">
+          <img src={kosmoLogo} alt="Kosmo Logo" className="kosmo-logo" style={{ width: '900px' }} />
+          <h2>UN CHATBOT DE OTRO PLANETA</h2>
+          <p>Únete y conócelo</p>
+          <button className="button">Hablar con Kosmo</button>
         </div>
-        <img src={earth} alt="Media planeta" className="earth" />
-      </div>
-      <div id="nosotros" className="section-nosotros">
-        <h2 className="nosotros-title">¿QUIÉNES SOMOS? CONOCE NUESTRA HISTORIA Y ÚNETE A NUESTRA ESTRATEGIA</h2>
-        <Carousel activeIndex={activeIndex} onSelect={handleSelect} interval={null}>
-          <Carousel.Item>
-            <video className="d-block w-100" controls>
-              <source src={aboutVideo} type="video/mp4" />
-            </video>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className="carousel-strategy-container">
-              <h4 className="strategy-title">NUESTRA ESTRATEGIA TRIFÁSICA</h4>
-              <div className="strategy-point">
-                <h5>LA IMPORTANCIA DE LOS BOTS</h5>
-                <p>En Kosmo, entendemos que los chatbots son más que simples programas...</p>
+        <div className="space-container">
+          <div className="stars-container"></div>
+          <div className="ship-orbit">
+            <img src={ship} alt="Nave Espacial" className="ship" />
+          </div>
+          <img src={earth} alt="Media planeta" className="earth" />
+        </div>
+        <div id="nosotros" className="section-nosotros">
+          <h2 className="nosotros-title">¿QUIÉNES SOMOS? CONOCE NUESTRA HISTORIA Y ÚNETE A NUESTRA ESTRATEGIA</h2>
+          <Carousel activeIndex={activeIndex} onSelect={handleSelect} interval={null}>
+            <Carousel.Item>
+              <video className="d-block w-100" controls>
+                <source src={aboutVideo} type="video/mp4" />
+              </video>
+            </Carousel.Item>
+            <Carousel.Item>
+              <div className="carousel-strategy-container">
+                <h4 className="strategy-title">NUESTRA ESTRATEGIA TRIFÁSICA</h4>
+                <div className="strategy-point">
+                  <h5>LA IMPORTANCIA DE LOS BOTS</h5>
+                  <p>En Kosmo, entendemos que los chatbots son más que simples programas...</p>
+                </div>
+                <div className="strategy-point">
+                  <h5>EL ORIGEN DE NUESTRA IDEA</h5>
+                  <p>Kosmo nace de necesidad clara...</p>
+                </div>
+                <div className="strategy-point">
+                  <h5>NUESTRO EQUIPO</h5>
+                  <p>Compuesto por innovadores, desarrolladores y creativos...</p>
+                </div>
               </div>
-              <div className="strategy-point">
-                <h5>EL ORIGEN DE NUESTRA IDEA</h5>
-                <p>Kosmo nace de necesidad clara...</p>
-              </div>
-              <div className="strategy-point">
-                <h5>NUESTRO EQUIPO</h5>
-                <p>Compuesto por innovadores, desarrolladores y creativos...</p>
-              </div>
-            </div>
-          </Carousel.Item>
-        </Carousel>
+            </Carousel.Item>
+          </Carousel>
+        </div>
         <div id="planes" className="planes-section">
           <h3>NUESTROS PLANES</h3>
           <div className="planes-cards">
@@ -218,12 +250,23 @@ function MainPage() {
             </div>
           </div>
         </div>
+        {/* Sección de personalización de Kosmo */}
+        <div className="customization-section">
+          <h2>¡SERVICIO COMPLETO DE PERSONALIZACIÓN!</h2>
+          <KosmoCustomizationComponent />
+          <p className="customization-description">
+            PUEDES ELEGIR ENTRE CAMBIAR SU ASPECTO, AGREGAR PROPS QUE FORTALEZCAN SU
+            PERSONALIDAD O CAMBIAR EL ESTILO EN QUE ESTE SE COMUNICA
+            <span className="service-notice">
+              *Para acceder a todas estas funciones, asegúrate de contar con el servicio de pago adecuado.
+            </span>
+          </p>
+        </div>
+        <div className="footer">
+          <p>© Kosmo. Todos los derechos reservados.</p>
+        </div>
       </div>
-      <div className="footer">
-        <p>© Kosmo. Todos los derechos reservados.</p>
-      </div>
-    </div>
-  );
-}
+    );
+  }
 
 export default App;
