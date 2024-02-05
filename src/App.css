@@ -515,7 +515,7 @@ body, .main-page {
   }
 
   .planes-cards:hover {
-    transform: scale(1.05); /* Aumenta el tamaño en un 5% */
+    transform: scale(1.02); /* Aumenta el tamaño en un 5% */
     transition: transform 0.6s ease;
   }
   
@@ -663,7 +663,7 @@ body, .main-page {
 .customization-section {
   text-align: center;
   padding: 20px;
-  background-color: #f0f0f0; /* Fondo claro para la sección, ajusta esto según tu diseño */
+  background-color: #ffffff; /* Fondo claro para la sección, ajusta esto según tu diseño */
   position: relative;
   z-index: 2;
 }
@@ -787,13 +787,13 @@ body, .main-page {
 @media (max-width: 768px) {
   .kosmo-customization-section {
     height: 30px;
-    width: 330px;
-    gap: 20px; /* Espacio entre los elementos de la sección */
+    width: 320px;
+    gap: 18px; /* Espacio entre los elementos de la sección */
     margin-top: 6rem; /* Espacio por encima de la sección de personalización */
   }
   .kosmo-bot,
   .kosmo-outfit {
-    height: 90px; /* Tamaño más pequeño para dispositivos móviles */
+    height: 80px; /* Tamaño más pequeño para dispositivos móviles */
   }
 
   .kosmo-customization-section button {

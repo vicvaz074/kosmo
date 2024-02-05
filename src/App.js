@@ -117,6 +117,9 @@ function App() {
                 <NavLink className="nav-link" to="/#planes">Planes</NavLink>
               </li>
               <li className="nav-item">
+                <NavLink className="nav-link" to="/#custom">Personalizar</NavLink>
+              </li>
+              <li className="nav-item">
                 <NavLink className="nav-link" to="/#contactanos">Contáctanos</NavLink>
               </li>
               <li className="nav-item">
@@ -262,7 +265,7 @@ function MainPage() {
           </div>
         </div>
         {/* Sección de personalización de Kosmo */}
-        <div className="customization-section">
+        <div id="custom" className="customization-section">
           <h2>¡SERVICIO COMPLETO DE PERSONALIZACIÓN!</h2>
           <KosmoCustomizationComponent />
           <p className="customization-description">
