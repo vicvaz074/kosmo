@@ -1,24 +1,25 @@
 import React from 'react';
-import './LoginComponent.css'; 
-import loginVideo from './assets/videos/LOGIN.mp4';
-import kosmoBasic from './assets/img/KOSMO_BASICO.svg';
-import lock from './assets/img/CANDADO.svg';
-import loginCircleForKosmoBasic from './assets/img/CIRCULO_LOGIN.svg';
-import loginBackgroundContainer from './assets/img/FONDO_LOGIN_CONTENEDOR.svg';
+import { useNavigate } from 'react-router-dom';
+import './LoginComponent.css';
+import loginContainer from './assets/img/LOGIN_PAGE.svg';
 
 const LoginComponent = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="login-container">
-      <video autoPlay loop muted playsInline className="login-video">
-        <source src={loginVideo} type="video/mp4" />
-      </video>
-      
-      <div className="landing-animation">Landing...</div>
-      {/* Resto del contenido de tu LoginComponent */}
+    <div className="login-component">
+      <img src={loginContainer} alt="Login Background" className="login-background" />
+      <div className="input-container">
+        <input type="text" className="text-input" placeholder="Usuario" />
+        <input type="password" className="text-input" placeholder="Contraseña" />
+      </div>
+      <div className="register-button">
+        <button type="button" onClick={() => navigate('/register')}>
+
+        </button>
+      </div>
     </div>
   );
 };
-
-
 
 export default LoginComponent;
