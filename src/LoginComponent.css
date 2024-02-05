@@ -27,7 +27,7 @@
     top: 41.8%;
     flex-direction: column;
     align-items: flex-end; /* Alinea los campos de texto y el botón hacia la derecha */
-    gap: 80px; /* Espacio entre campos de texto y botón */
+    gap: 75px; /* Espacio entre campos de texto y botón */
     z-index: 2;
   }
   
@@ -44,7 +44,7 @@
   
   .register-button button {
     position: absolute;
-    padding: 18px 160px; /* Ajusta el padding según el diseño */
+    padding: 18px 155px; /* Ajusta el padding según el diseño */
     border: 2px solid white; /* Borde blanco */
     border-radius: 20px; /* Esquinas redondeadas */
     background-color: transparent; /* Fondo transparente */
