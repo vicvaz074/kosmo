@@ -23,23 +23,34 @@ import outfitYellow from './assets/img/CONJUNTO_AMARILLO.svg';
 const KosmoCustomizationComponent = () => {
   const [outfitIndex, setOutfitIndex] = useState(0);
   const outfits = [outfitRed, outfitBlue, outfitYellow];
+  const [isChanging, setIsChanging] = useState(false);
 
   const previousOutfitIndex = (outfitIndex - 1 + outfits.length) % outfits.length;
   const nextOutfitIndex = (outfitIndex + 1) % outfits.length;
 
+  // Función para manejar el cambio de outfit y disparar la animación
+  const changeOutfit = (newIndex) => {
+    setIsChanging(true); // Inicia la animación
+    setTimeout(() => {
+      setOutfitIndex(newIndex);
+      setIsChanging(false); // Restablece el estado de animación después de que termine
+    }, 500); // Asegúrate de que este tiempo coincida con la duración de la animación CSS
+  };
+
   return (
     <div className="kosmo-customization-section">
-      <button onClick={() => setOutfitIndex(previousOutfitIndex)}>{"<"}</button>
+      <button onClick={() => changeOutfit(previousOutfitIndex)}>{"<"}</button>
       <img src={outfits[previousOutfitIndex]} alt="Previous Outfit" className="kosmo-outfit side-outfit" />
       <div className="center-outfit">
         <img src={kosmoBotBasico} alt="Kosmo Bot Básico" className="kosmo-bot" />
-        <img src={outfits[outfitIndex]} alt="Current Outfit" className="kosmo-outfit" />
+        <img src={outfits[outfitIndex]} alt="Current Outfit" className={`kosmo-outfit ${isChanging ? 'animate-change' : ''}`} />
       </div>
       <img src={outfits[nextOutfitIndex]} alt="Next Outfit" className="kosmo-outfit side-outfit" />
-      <button onClick={() => setOutfitIndex(nextOutfitIndex)}>{">"}</button>
+      <button onClick={() => changeOutfit(nextOutfitIndex)}>{">"}</button>
     </div>
   );
 };
+
 
 
 function App() {
