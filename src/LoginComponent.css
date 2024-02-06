@@ -83,7 +83,7 @@
         top: 43.4%;
         flex-direction: column;
         align-items: flex-end; /* Alinea los campos de texto y el botón hacia la derecha */
-        gap: 30.65px; /* Espacio entre campos de texto y botón */
+        gap: 30.72px; /* Espacio entre campos de texto y botón */
         z-index: 2;
       }
 
