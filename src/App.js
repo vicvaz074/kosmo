@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import LoginComponent from './LoginComponent';
 import RegisterComponent from './RegisterComponent';
+import KosmoTryComponent from './KosmoTryComponent';
 import logo from './assets/img/LOGO_AZULOSC.svg';
 import kosmoLogo from './assets/img/KOSMO_AZUL.svg';
 import kosmoOxxo from './assets/img/KOSMO_OXXO.svg';
@@ -136,6 +138,7 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/login" element={<LoginComponent />} />
         <Route path="/registrarse" element={<RegisterComponent />} />
+        <Route path="/tryme" element={<KosmoTryComponent />} />
       </Routes>
     </Router>
   );
@@ -145,6 +148,7 @@ function App() {
 
 function MainPage() {
   const location = useLocation();
+  const navigate = useNavigate(); // Agrega esta línea
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleSelect = (selectedIndex, e) => {
@@ -176,7 +180,7 @@ function MainPage() {
   
   useEffect(() => {
     const starsContainer = document.querySelector('.stars-container');
-    createStars(starsContainer, 100);
+    createStars(starsContainer, 120);
   }, []);
 
   function createStars(container, numberOfStars) {
@@ -188,7 +192,7 @@ function MainPage() {
       const starSize = Math.random() * (0.2 - 0.1) + 0.1;
 
       star.style.left = `${xPos}vw`;
-      star.style.top = `${yPos}vh`;
+      star.style.top = `${yPos}vw`;
       star.style.width = `${starSize}vw`;
       star.style.height = `${starSize}vw`;
 
@@ -202,7 +206,7 @@ function MainPage() {
           <img src={kosmoLogo} alt="Kosmo Logo" className="kosmo-logo" style={{ width: '900px' }} />
           <h2>UN CHATBOT DE OTRO PLANETA</h2>
           <p>Únete y conócelo</p>
-          <button className="button">Hablar con Kosmo</button>
+          <button className="button" onClick={() => navigate('/tryme')}>Hablar con Kosmo</button>
         </div>
         <div className="space-container">
           <div className="stars-container"></div>

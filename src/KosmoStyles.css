@@ -1,0 +1,88 @@
+body {
+    font-family: 'IBM Plex Mono', monospace;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    color: #333;
+}
+
+.chat-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 80px auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.chat-header {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: #1B1464;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.chat-input {
+    display: flex; /* Esto alinea horizontalmente el input y el botón */
+    justify-content: space-between; /* Esto separa el input del botón */
+    padding: 10px; /* Ajusta el padding según necesites */
+    width: 100%; /* O un ancho específico, según el diseño de tu chat */
+  }
+  
+  .chat-input input {
+    width: calc(100% - 50px); /* Ajusta 50px o el ancho de tu botón */
+    padding: 8px; /* Ajusta según la altura deseada del input */
+    margin-right: 10px; /* Espacio entre el input y el botón */
+    border: 1px solid #ccc; /* Ajusta el estilo del borde como prefieras */
+    border-radius: 4px; /* Bordes redondeados para el input */
+  }
+  
+
+.chat-area, .form-container {
+    padding: 20px;
+}
+
+#userInput, button, .form-group input, .form-group button {
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 0;
+}
+
+.send-message-button {
+    padding: 8px 10px; /* Ajusta el padding para reducir el tamaño del botón si es necesario */
+    margin: 0; /* Ajusta el margen según sea necesario */
+    border: none; /* Remueve el borde si prefieres un diseño sin bordes */
+    background-color: #262EC9; /* O cualquier color que coincida con tu diseño */
+    border-radius: 4px; /* Bordes redondeados para el botón */
+  }
+  
+
+button:hover {
+    background-color: #1B1464;
+}
+
+.schedule-btn, .form-group .send-message-button {
+    background-color: #262EC9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.schedule-btn:hover, .form-group button:hover {
+    background-color: #1B1464;
+}
+
+.modal, .modal-content {
+    display: none; /* Si necesitas utilizar modales, ajusta este estilo */
+}
+
+@media screen and (max-width: 768px) {
+    .chat-container, .modal-content {
+        width: 95%;
+    }
+}
