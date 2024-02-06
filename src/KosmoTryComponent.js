@@ -106,7 +106,7 @@ const KosmoTryComponent = () => {
             <input type="date" value={fecha} onChange={(e) => setFecha(e.target.value)} required />
           </div>
           <div className="form-group">
-            <button type="submit">Enviar</button>
+            <button className="submit-button" type="submit">Enviar</button>
           </div>
         </form>
       </div>
