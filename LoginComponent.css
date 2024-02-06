@@ -1,0 +1,121 @@
+.login-component {
+    position: relative;
+    display: flex;
+    justify-content: flex-end; /* Alinea el contenedor de entrada hacia la derecha */
+    align-items: center;
+    height: 100vh;
+    background-color: white; /* Color de fondo en caso de que la imagen no cargue */
+  }
+  
+  .login-background {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%; /* Tamaño máximo por defecto */
+    width: auto; /* Permite que la imagen mantenga su proporción */
+    height: auto;
+    min-height: 80%; /* Asegura que la imagen cubra la altura */
+    object-fit: cover; /* Cubre el área sin perder proporciones */
+    z-index: 1;
+  }
+  
+  .input-container {
+    position: absolute;
+    right: 17%; /* Comienza más cerca del lado derecho de la pantalla */
+    display: flex;
+    top: 41.8%;
+    flex-direction: column;
+    align-items: flex-end; /* Alinea los campos de texto y el botón hacia la derecha */
+    gap: 73px; /* Espacio entre campos de texto y botón */
+    z-index: 2;
+  }
+  
+  .text-input {
+    font-size: 20px;
+    padding: 2px;
+    border: 2px solid #FFFFFF;
+    border-radius: 4px;
+    background-color: transparent;
+    color: white;
+    width: 400px; /* Ancho fijo para los campos de texto */
+    z-index: 2;
+  }
+  
+  .register-button button {
+    position: absolute;
+    padding: 18px 151px; /* Ajusta el padding según el diseño */
+    border: 2px solid white; /* Borde blanco */
+    border-radius: 20px; /* Esquinas redondeadas */
+    background-color: transparent; /* Fondo transparente */
+    color: white; /* Color del texto */
+    top: 72%;
+    right: 20.6%;
+    font-size: 16px; /* Tamaño del texto */
+    cursor: pointer; /* Cursor tipo puntero */
+    text-decoration: none; /* Sin subrayado */
+    z-index: 3;
+  }
+  
+  
+  .register-button button:hover {
+    background-color: white; /* Cambio de color al pasar el mouse para efecto visual */
+    opacity: 0.5; /* Reducción de opacidad al pasar el mouse */
+    color: #1B1464; /* Cambio de color del texto al pasar el mouse */
+  }
+  
+
+  /* Media queries */
+
+  
+  @media (max-width: 768px) {
+    .login-background {
+      max-width: 95%; /* Ajusta el tamaño de la imagen en dispositivos móviles */
+      object-fit: cover; /* Mantiene el aspecto de cubrir pero permite reposicionar */
+      object-position: right center; /* Alinea la imagen hacia la izquierda y centrada verticalmente */
+      min-height: 47%;
+    }
+    
+    .input-container {
+        position: absolute;
+        right: 22%; /* Comienza más cerca del lado derecho de la pantalla */
+        display: flex;
+        top: 43.4%;
+        flex-direction: column;
+        align-items: flex-end; /* Alinea los campos de texto y el botón hacia la derecha */
+        gap: 30.2px; /* Espacio entre campos de texto y botón */
+        z-index: 2;
+      }
+
+      .text-input {
+        font-size: 16px;
+        padding: 1px;
+        border: 2px solid #FFFFFF;
+        border-radius: 4px;
+        background-color: transparent;
+        color: white;
+        width: 181px; /* Ancho fijo para los campos de texto */
+        z-index: 2;
+      }
+  
+      .register-button button {
+        position: absolute;
+        padding: 12px 94px; /* Ajusta el padding según el diseño */
+        border: 2px solid white; /* Borde blanco */
+        border-radius: 20px; /* Esquinas redondeadas */
+        background-color: transparent; /* Fondo transparente */
+        color: white; /* Color del texto */
+        top: 62%;
+        right: 27%;
+        font-size: 16px; /* Tamaño del texto */
+        cursor: pointer; /* Cursor tipo puntero */
+        text-decoration: none; /* Sin subrayado */
+        z-index: 3;
+      }
+
+      .register-button button:hover {
+        background-color: white; /* Cambio de color al pasar el mouse para efecto visual */
+        opacity: 0.5; /* Reducción de opacidad al pasar el mouse */
+        color: #1B1464; /* Cambio de color del texto al pasar el mouse */
+      }
+  }
