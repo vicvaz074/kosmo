@@ -816,15 +816,15 @@ body, .main-page {
     color: #1B1464;
   }
   .customization-section h2 {
-    font-size: 0.8rem; /* Tamaño más pequeño para el título en dispositivos móviles */
+    font-size: 1.1rem; /* Tamaño más pequeño para el título en dispositivos móviles */
   }
 
   .customization-description {
-    font-size: 0.9rem; /* Tamaño más pequeño para la descripción y la nota de servicio en dispositivos móviles */
+    font-size: 0.7rem; /* Tamaño más pequeño para la descripción y la nota de servicio en dispositivos móviles */
     margin-top: 6rem; /* Espacio por encima de la sección de personalización */
   }
   .service-notice {
-    font-size: 0.7rem; /* Tamaño más pequeño para la descripción y la nota de servicio en dispositivos móviles */
+    font-size: 0.55rem; /* Tamaño más pequeño para la descripción y la nota de servicio en dispositivos móviles */
     margin-top: 1rem; /* Espacio por encima de la sección de personalización */
 
   }
