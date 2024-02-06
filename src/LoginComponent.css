@@ -88,7 +88,7 @@
       }
 
       .text-input {
-        font-size: 20px;
+        font-size: 17px;
         padding: 1px;
         border: 2px solid #FFFFFF;
         border-radius: 4px;
@@ -100,7 +100,7 @@
   
       .register-button button {
         position: absolute;
-        padding: 15px 94px; /* Ajusta el padding según el diseño */
+        padding: 13px 94px; /* Ajusta el padding según el diseño */
         border: 2px solid white; /* Borde blanco */
         border-radius: 20px; /* Esquinas redondeadas */
         background-color: transparent; /* Fondo transparente */

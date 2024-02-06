@@ -73,6 +73,11 @@ button:hover {
     transition: background-color 0.3s ease;
 }
 
+.submit-button{
+    background-color: #262EC9;
+    
+}
+
 .schedule-btn:hover, .form-group button:hover {
     background-color: #1B1464;
 }
