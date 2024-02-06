@@ -83,7 +83,7 @@
         top: 43.4%;
         flex-direction: column;
         align-items: flex-end; /* Alinea los campos de texto y el botón hacia la derecha */
-        gap: 28px; /* Espacio entre campos de texto y botón */
+        gap: 27px; /* Espacio entre campos de texto y botón */
         z-index: 2;
       }
 
@@ -100,13 +100,13 @@
   
       .register-button button {
         position: absolute;
-        padding: 18px 94px; /* Ajusta el padding según el diseño */
+        padding: 15px 94px; /* Ajusta el padding según el diseño */
         border: 2px solid white; /* Borde blanco */
         border-radius: 20px; /* Esquinas redondeadas */
         background-color: transparent; /* Fondo transparente */
         color: white; /* Color del texto */
         top: 62%;
-        right: 25%;
+        right: 27%;
         font-size: 16px; /* Tamaño del texto */
         cursor: pointer; /* Cursor tipo puntero */
         text-decoration: none; /* Sin subrayado */
