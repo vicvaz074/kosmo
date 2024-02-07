@@ -26,6 +26,7 @@ const KosmoCustomizationComponent = () => {
   const [outfitIndex, setOutfitIndex] = useState(0);
   const outfits = [outfitRed, outfitBlue, outfitYellow];
   const [isChanging, setIsChanging] = useState(false);
+  
 
   const previousOutfitIndex = (outfitIndex - 1 + outfits.length) % outfits.length;
   const nextOutfitIndex = (outfitIndex + 1) % outfits.length;
