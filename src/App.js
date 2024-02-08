@@ -242,31 +242,60 @@ function MainPage() {
           </Carousel>
         </div>
         <div id="planes" className="planes-section">
-          <h3>NUESTROS PLANES</h3>
-          <div className="planes-cards">
-            <div className="card">
-              <img src={kosmoBasic} className="card-img-top" alt="Kosmo Basic"/>
-              <div className="card-body">
-                <h5 className="card-title">KOSMO BASIC</h5>
-                <p className="card-text">Un chatbot personal, toda la inteligencia...</p>
-              </div>
-            </div>
-            <div className="card">
-              <img src={kosmoOxxo} className="card-img-top" alt="Kosmo Oxxo" />
-              <div className="card-body">
-                <h5 className="card-title">KOSMO PRO</h5>
-                <p className="card-text">Un chatbot personal, se pone la camiseta y aprovechas toda su inteligencia...</p>
-              </div>
-            </div>
-            <div className="card">
-              <img src={kosmoConstructor} className="card-img-top" alt="Kosmo Constructor" />
-              <div className="card-body">
-                <h5 className="card-title">KOSMO PRO PLUS</h5>
-                <p className="card-text">Un chatbot personalizable, se pone la camiseta y otra herramienta extra, con toda su inteligencia incluida.</p>
-              </div>
-            </div>
+      <h3>NUESTROS PLANES</h3>
+      <div className="planes-cards">
+        {/* Tarjeta para el Tier Básico */}
+        <div className="card">
+          <img src={kosmoBasic} className="card-img-top" alt="Kosmo Basic"/>
+          <div className="card-body">
+            <h5 className="card-title">KOSMO TIER BÁSICO  -     $29/mes</h5>
+            <p className="card-text">
+              Asistencia 24/7 por Kosmo IA. Un bot con la personalidad por defecto para comunicación y ventas.
+            </p>
+            <p className="card-text">
+              Un ID único para administrar tus bots.
+            </p>
           </div>
         </div>
+
+        {/* Tarjeta para el Tier Intermedio */}
+        <div className="card">
+          <img src={kosmoOxxo} className="card-img-top" alt="Kosmo Oxxo" />
+          <div className="card-body">
+            <h5 className="card-title">KOSMO TIER INTERMEDIO - $79/mes</h5>
+            <p className="card-text">
+              Incluye todo lo del Tier Básico. 
+            </p>
+            <p className="card-text">
+              Personalización de la imagen de tu bot. Varios bots con personalidades únicas. Acceso mejorado a herramientas de análisis.
+            </p>
+            <p className="card-text">
+              Varios bots con personalidades únicas.
+            </p>
+            <p className="card-text">
+              Acceso mejorado a herramientas de análisis.
+            </p>
+          </div>
+        </div>
+
+        {/* Tarjeta para el Tier Premium */}
+        <div className="card">
+          <img src={kosmoConstructor} className="card-img-top" alt="Kosmo Constructor" />
+          <div className="card-body">
+            <h5 className="card-title">KOSMO TIER PREMIUM - $129/mes</h5>
+            <p className="card-text">
+              Todos los beneficios de los Tiers anteriores. 
+            </p>
+            <p className="card-text">
+              Acceso prioritario a atención al cliente.
+            </p>
+            <p className="card-text">
+              Herramientas de imagen y lenguaje adicionales para una mayor personalización.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
         {/* Sección de personalización de Kosmo */}
         <div id="custom" className="customization-section">
           <h2>¡SERVICIO COMPLETO DE PERSONALIZACIÓN!</h2>
