@@ -48,7 +48,6 @@ body {
     margin-right: 10px; /* Espacio entre el input y el botón */
     border: 1px solid #ccc; /* Ajusta el estilo del borde como prefieras */
     border-radius: 4px; /* Bordes redondeados para el input */
-    margin-top: 0rem;
   }
   
 
@@ -68,7 +67,7 @@ body {
     border: none; /* Remueve el borde si prefieres un diseño sin bordes */
     background-color: #262EC9; /* O cualquier color que coincida con tu diseño */
     border-radius: 4px; /* Bordes redondeados para el botón */
-    margin-top: 0rem;
+
   }
   
 
@@ -141,14 +140,18 @@ button:hover {
     max-width: 80%;
   }
   
+
+  
 /* Estilos para mensajes del usuario */
 .user-message {
     background-color: #262EC9; /* Color oscuro para el usuario */
     color: white;
     font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
     margin-left: auto; /* Alinea los mensajes del usuario a la derecha */
+    text-align: auto;
     margin-top: 30px; /* Espacio debajo de cada mensaje del usuario */
     border-bottom-right-radius: 0; /* Estilo específico para burbuja */
+    word-wrap: break-word; /* Asegura que las palabras largas se rompan y pasen a la siguiente línea */
   }
 
   .user-message:hover {
@@ -166,6 +169,7 @@ button:hover {
     margin-right: auto; /* Alinea los mensajes del bot a la izquierda */
     margin-top: 30px; /* Espacio debajo de cada mensaje del bot */
     border-bottom-left-radius: 0; /* Estilo específico para burbuja */
+    word-wrap: break-word; /* Asegura que las palabras largas se rompan y pasen a la siguiente línea */
   }
 
   .appointment-button{
