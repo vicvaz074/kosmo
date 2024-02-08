@@ -860,7 +860,7 @@ body, .main-page {
     color: #1B1464;
   }
   .customization-section h2 {
-    font-size: 1.1rem; /* Tamaño más pequeño para el título en dispositivos móviles */
+    font-size: 1.5rem; /* Tamaño más pequeño para el título en dispositivos móviles */
   }
 
   .customization-description {
