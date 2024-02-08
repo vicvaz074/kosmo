@@ -426,7 +426,7 @@ body, .main-page {
 
 /* Estilos para el carrusel */
 .carousel {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .carousel-item {
@@ -541,7 +541,7 @@ body, .main-page {
   color: #262EC9; /* Color azul */
   font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   }
   
   .planes-cards {
@@ -602,6 +602,10 @@ body, .main-page {
   @media (max-width: 768px) {
   .nosotros-title {
   font-size: 1.5rem;
+  }
+
+  .planes-section h3 {
+    font-size: 1.5rem;
   }
   
   .carousel-item {
