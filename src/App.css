@@ -861,6 +861,7 @@ body, .main-page {
   }
   .customization-section h2 {
     font-size: 1.5rem; /* Tamaño más pequeño para el título en dispositivos móviles */
+    font-weight: 700;
   }
 
   .customization-description {
