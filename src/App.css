@@ -419,7 +419,7 @@ body, .main-page {
   font-size: 2rem;
   font-style: bold;
   font-weight: 700;
-  margin-top: 1rem;
+  margin-top: 2.2rem;
   margin-bottom: 3rem;
   animation: fadeInDown 1s both;
 }
@@ -541,7 +541,7 @@ body, .main-page {
   color: #262EC9; /* Color azul */
   font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
   }
   
   .planes-cards {
@@ -549,7 +549,7 @@ body, .main-page {
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-top: 4rem;
+  margin-top: 2rem;
   }
 
   .planes-cards:hover {

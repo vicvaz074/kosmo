@@ -64,6 +64,36 @@
     color: #1B1464; /* Cambio de color del texto al pasar el mouse */
   }
   
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea los elementos al inicio (izquierda) */
+    margin-bottom: 20px; /* Espacio entre cada grupo de formulario */
+  }
+  
+  .form-group label {
+    margin-bottom: 5px; /* Espacio entre la etiqueta y el campo de entrada */
+  }
+  
+  .form-group input,
+  .form-group .submit-button {
+    width: 100%; /* Hace que los inputs y el botón ocupen todo el ancho disponible del contenedor .form-group */
+    padding: 10px; /* Agrega algo de padding para mejor estética */
+    border-radius: 4px; /* Opcional: bordes redondeados para los inputs y el botón */
+    border: 1px solid #ccc; /* Opcional: borde para los inputs */
+  }
+  
+  .submit-button {
+    background-color: #262EC9; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    cursor: pointer; /* Cambia el cursor a un puntero para indicar que es clickeable */
+    border: none; /* Elimina el borde del botón para que se vea mejor */
+  }
+  
+  /* Opcional: Estilos para hover en el botón */
+  .submit-button:hover {
+    background-color: #1B1464;
+  }
 
   /* Media queries */
 
@@ -97,7 +127,7 @@
         width: 178px; /* Ancho fijo para los campos de texto */
         z-index: 2;
       }
-  
+
       .register-button button {
         position: absolute;
         padding: 12px 94px; /* Ajusta el padding según el diseño */

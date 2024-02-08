@@ -18,13 +18,22 @@ body {
 }
 
 .chat-header {
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    background-color: #1B1464;
-    color: white;
-    padding: 20px;
-    text-align: center;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  background-color: #262EC9; /* Color azul original */
+  color: white;
+  padding: 20px;
+  text-align: center;
 }
+
+/* Añade esto a tu CSS */
+.chat-header:hover {
+  background-color: #1B1464; /* Color azul más oscuro al pasar el cursor */
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
 
 .chat-input {
     display: flex; /* Esto alinea horizontalmente el input y el botón */
@@ -92,6 +101,36 @@ button:hover {
     }
 }
 
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea los elementos al inicio (izquierda) */
+  margin-bottom: 20px; /* Espacio entre cada grupo de formulario */
+}
+
+.form-group label {
+  margin-bottom: 5px; /* Espacio entre la etiqueta y el campo de entrada */
+}
+
+.form-group input,
+.form-group .submit-button {
+  width: 100%; /* Hace que los inputs y el botón ocupen todo el ancho disponible del contenedor .form-group */
+  padding: 7px; /* Agrega algo de padding para mejor estética */
+  border-radius: 7px; /* Opcional: bordes redondeados para los inputs y el botón */
+  border: 1px solid #ccc; /* Opcional: borde para los inputs */
+}
+
+.submit-button {
+  background-color: #262EC9; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  cursor: pointer; /* Cambia el cursor a un puntero para indicar que es clickeable */
+}
+
+/* Opcional: Estilos para hover en el botón */
+.submit-button:hover {
+  background-color: #1B1464;
+}
+
 /* Estilos base para todas las burbujas de chat */
 .chat-message {
     padding: 10px;
@@ -125,19 +164,18 @@ button:hover {
     color: white; /* Color azul */
     font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
     margin-top: 1rem; /* Espacio por encima de la descripción */
+    margin-left: 0.7rem;
     font-size: 1rem; /* Tamaño de la descripción */
     text-align: center;
-    
-
+    width: 97%; /* Ancho del botón */
   }
   
-  
-
 
 .typing-indicator {
   display: flex;
   justify-content: center;
   margin: 5px;
+  margin-top: 2rem;
 }
 
 .typing-dot {
@@ -169,3 +207,36 @@ button:hover {
     transform: scale(1.5);
   }
 }
+
+@media (max-width: 768px) {
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* Alinea los elementos al inicio (izquierda) */
+      margin-bottom: 20px; /* Espacio entre cada grupo de formulario */
+    }
+    
+    .form-group label {
+      margin-bottom: 5px; /* Espacio entre la etiqueta y el campo de entrada */
+    }
+    
+    .form-group input,
+    .form-group .submit-button {
+      width: 100%; /* Hace que los inputs y el botón ocupen todo el ancho disponible del contenedor .form-group */
+      padding: 10px; /* Agrega algo de padding para mejor estética */
+      border-radius: 4px; /* Opcional: bordes redondeados para los inputs y el botón */
+      border: 1px solid #ccc; /* Opcional: borde para los inputs */
+    }
+    
+    .submit-button {
+      background-color: #262EC9; /* Color de fondo del botón */
+      color: white; /* Color del texto del botón */
+      cursor: pointer; /* Cambia el cursor a un puntero para indicar que es clickeable */
+      border: none; /* Elimina el borde del botón para que se vea mejor */
+    }
+    
+    /* Opcional: Estilos para hover en el botón */
+    .submit-button:hover {
+      background-color: #1B1464;
+    }
+  }
