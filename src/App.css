@@ -420,7 +420,7 @@ body, .main-page {
   font-style: bold;
   font-weight: 700;
   margin-top: 1rem;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   animation: fadeInDown 1s both;
 }
 
@@ -481,6 +481,43 @@ body, .main-page {
   font-style: light;
 }
 
+/* Estilos para mantener el icono blanco */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(50%); /* Mantiene el icono blanco */
+}
+
+/* Estilos para el estado hover de las flechas */
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+  filter: invert(50%); /* Hace el icono ligeramente más oscuro al pasar el cursor */
+  cursor: pointer; /* Cambia el cursor a un puntero para indicar interactividad */
+}
+
+/* Ajustar el tamaño del contenedor de las flechas */
+.carousel-control-prev, 
+.carousel-control-next {
+  width: 45px; /* Ajusta el ancho al mínimo necesario */
+  height: 45px; /* Ajusta la altura al mínimo necesario */
+  padding: 2px; /* Añade un poco de espacio alrededor del ícono para facilidad de clic */
+}
+
+/* Ajustar la posición de las flechas si es necesario */
+.carousel-control-prev, 
+.carousel-control-next {
+  top: 50%; /* Centra las flechas verticalmente respecto al carrusel */
+  transform: translateY(-50%); /* Asegura el centrado exacto */
+}
+
+.carousel-control-prev-icon, 
+.carousel-control-next-icon {
+  width: 35px; /* Ajusta según el tamaño deseado del ícono */
+  height: 35px; /* Ajusta según el tamaño deseado del ícono */
+}
+
+
+
+
 /* Animaciones */
 @keyframes fadeInDown {
   from { opacity: 0; transform: translate3d(0, -100%, 0); }
@@ -512,6 +549,7 @@ body, .main-page {
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-top: 4rem;
   }
 
   .planes-cards:hover {
@@ -535,7 +573,7 @@ body, .main-page {
   
   .card-img-top {
     width: 100%; /* mantiene el ancho al 100% del contenedor de la tarjeta */
-    height: 550px; /* reduce la altura de la imagen */
+    height: 450px; /* reduce la altura de la imagen */
     object-fit: fill; /* asegura que la imagen cubra todo el espacio asignado sin distorsionarse */
   }
   
@@ -581,6 +619,12 @@ body, .main-page {
   
   .card {
   width: 100%;
+  }
+
+  .card-img-top {
+    width: 100%; /* mantiene el ancho al 100% del contenedor de la tarjeta */
+    height: 210px; /* reduce la altura de la imagen */
+    object-fit: fill; /* asegura que la imagen cubra todo el espacio asignado sin distorsionarse */
   }
   }
 
