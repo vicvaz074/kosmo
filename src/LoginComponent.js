@@ -15,7 +15,6 @@ const LoginComponent = () => {
       </div>
       <div className="register-button">
         <button type="button" onClick={() => navigate('/register')}>
-
         </button>
       </div>
     </div>

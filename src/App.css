@@ -710,7 +710,7 @@ body, .main-page {
 /* Estilos para la sección de personalización de Kosmo */
 .customization-section {
   text-align: center;
-  padding: 20px;
+  padding: 30px;
   background-color: #ffffff; /* Fondo claro para la sección, ajusta esto según tu diseño */
   position: relative;
   z-index: 2;
@@ -761,7 +761,6 @@ body, .main-page {
   height: 330px; /* Ajusta esto según el tamaño que deseas para las imágenes */
   width: auto;
   position: absolute;
-  left: 17%;
   bottom: 0%;
   z-index: 5;
   transition: opacity 0.5s ease, transform 0.5s ease;
@@ -776,6 +775,17 @@ body, .main-page {
   z-index: 5;
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
+
+.kosmo-head {
+  /* Ajusta estos estilos según necesites */
+  width: 265px; /* Ejemplo de tamaño */
+  position: absolute; /* Posicionamiento respecto al contenedor .center-outfit */
+  top: 19%; /* Ajusta según sea necesario */
+  left: 49%; /* Centrar la cabeza respecto al contenedor */
+  transform: translateX(-50%); /* Ajuste fino para centrar exactamente la imagen */
+  z-index: 6;
+}
+
 
 
 @keyframes scaleUpAndDown {
@@ -829,6 +839,7 @@ body, .main-page {
 .side-outfit {
   position: static; /* Restablece la posición para los outfits laterales */
   opacity: 0.6; /* Hace que los outfits laterales sean menos prominentes */
+  width: 180px;
 }
 
 .center-outfit {
@@ -856,6 +867,12 @@ body, .main-page {
     height: 80px; /* Tamaño más pequeño para dispositivos móviles */
   }
 
+  .side-outfit {
+    position: static; /* Restablece la posición para los outfits laterales */
+    opacity: 0.6; /* Hace que los outfits laterales sean menos prominentes */
+    width: 56px;
+  }
+
   .kosmo-customization-section button {
     border: none;
     background: none;
@@ -867,6 +884,17 @@ body, .main-page {
     font-size: 1.5rem; /* Tamaño más pequeño para el título en dispositivos móviles */
     font-weight: 700;
   }
+
+  .kosmo-head {
+    /* Ajusta estos estilos según necesites */
+    width: 66px ;; /* Ejemplo de tamaño */
+    position: absolute; /* Posicionamiento respecto al contenedor .center-outfit */
+    top: 19%; /* Ajusta según sea necesario */
+    left: 49%; /* Centrar la cabeza respecto al contenedor */
+    transform: translateX(-50%); /* Ajuste fino para centrar exactamente la imagen */
+    z-index: 6;
+  }
+  
 
   .customization-description {
     font-size: 0.7rem; /* Tamaño más pequeño para la descripción y la nota de servicio en dispositivos móviles */

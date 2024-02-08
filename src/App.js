@@ -17,27 +17,25 @@ import ship from './assets/img/NAVE.png';
 import aboutVideo from './assets/videos/NOSOTROS.mp4';
 import Carousel from 'react-bootstrap/Carousel';
 import kosmoBotBasico from './assets/img/KOSMO_BOT_BASICO.svg';
-import outfitRed from './assets/img/CONJUNTO_ROJO.svg';
-import outfitBlue from './assets/img/CONJUNTO_AZUL.svg';
-import outfitYellow from './assets/img/CONJUNTO_AMARILLO.svg';
-
+import outfitRed from './assets/img/CONJUNTO_ROJOV3.svg';
+import outfitBlue from './assets/img/CONJUNTO_AZULV2.svg';
+import outfitYellow from './assets/img/CONJUNTO_AMARILLOV2.svg';
+import head from './assets/img/CABEZA.png';
 
 const KosmoCustomizationComponent = () => {
   const [outfitIndex, setOutfitIndex] = useState(0);
   const outfits = [outfitRed, outfitBlue, outfitYellow];
   const [isChanging, setIsChanging] = useState(false);
   
-
   const previousOutfitIndex = (outfitIndex - 1 + outfits.length) % outfits.length;
   const nextOutfitIndex = (outfitIndex + 1) % outfits.length;
 
-  // Función para manejar el cambio de outfit y disparar la animación
   const changeOutfit = (newIndex) => {
-    setIsChanging(true); // Inicia la animación
+    setIsChanging(true);
     setTimeout(() => {
       setOutfitIndex(newIndex);
-      setIsChanging(false); // Restablece el estado de animación después de que termine
-    }, 500); // Asegúrate de que este tiempo coincida con la duración de la animación CSS
+      setIsChanging(false);
+    }, 500);
   };
 
   return (
@@ -45,6 +43,8 @@ const KosmoCustomizationComponent = () => {
       <button onClick={() => changeOutfit(previousOutfitIndex)}>{"<"}</button>
       <img src={outfits[previousOutfitIndex]} alt="Previous Outfit" className="kosmo-outfit side-outfit" />
       <div className="center-outfit">
+        {/* Añade aquí la imagen de la cabeza de Kosmo */}
+        <img src={head} alt="Kosmo's Head" className="kosmo-head" />
         <img src={kosmoBotBasico} alt="Kosmo Bot Básico" className="kosmo-bot" />
         <img src={outfits[outfitIndex]} alt="Current Outfit" className={`kosmo-outfit ${isChanging ? 'animate-change' : ''}`} />
       </div>
@@ -53,8 +53,6 @@ const KosmoCustomizationComponent = () => {
     </div>
   );
 };
-
-
 
 function App() {
   const [isHovering, setIsHovering] = useState(false);
