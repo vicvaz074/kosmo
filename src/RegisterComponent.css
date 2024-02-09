@@ -128,9 +128,9 @@
   .register-robot {
     position: static; /* Elimina la posición absoluta */
     margin: 1rem auto 0; /* Centra el robot y agrega margen superior */
-    margin-bottom: -10rem;
-    width: 120px; /* Tamaño del círculo */
-    height: 120px; /* Tamaño del círculo */
+    margin-bottom: -10.5rem;
+    width: 110px; /* Tamaño del círculo */
+    height: 110px; /* Tamaño del círculo */
     background-color: #262EC9; /* Fondo azul para el círculo detrás del robot */
     border: 3px solid white; /* Contorno blanco */
     border-radius: 50%; /* Hace que el fondo sea circular */
