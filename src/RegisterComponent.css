@@ -103,12 +103,13 @@
 
 @media (max-width: 768px) {
   .register-panel h1 {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    margin-top: -1rem;
     text-align: center;
     color: white;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
-  
+
   .register-wrapper {
     flex-direction: column;
     justify-content: center;
@@ -118,7 +119,7 @@
   }
 
   .register-panel {
-    width: 90%;
+    width: 92%;
     margin: 2rem auto; /* Aumenta el margen superior para más espacio desde la parte superior */
     padding-bottom: 200px; /* Espacio extra en la parte inferior para el robot */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -128,8 +129,8 @@
     position: static; /* Elimina la posición absoluta */
     margin: 1rem auto 0; /* Centra el robot y agrega margen superior */
     margin-bottom: -10rem;
-    width: 150px; /* Tamaño del círculo */
-    height: 150px; /* Tamaño del círculo */
+    width: 120px; /* Tamaño del círculo */
+    height: 120px; /* Tamaño del círculo */
     background-color: #262EC9; /* Fondo azul para el círculo detrás del robot */
     border: 3px solid white; /* Contorno blanco */
     border-radius: 50%; /* Hace que el fondo sea circular */
