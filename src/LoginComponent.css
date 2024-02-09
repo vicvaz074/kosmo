@@ -179,7 +179,7 @@
   .login-robot {
     position: absolute;
     transform: translateX(0%);
-    bottom: 10rem;
+    bottom: 8.5rem;
     background-color: #262EC9;
     border: 5px solid white;
     border-radius: 50%;
@@ -189,8 +189,8 @@
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 200px; /* Nuevo ancho para el círculo */
-    height: 200px; /* Nuevo alto para el círculo */
+    width: 180px; /* Nuevo ancho para el círculo */
+    height: 180px; /* Nuevo alto para el círculo */
     z-index: 5;
   }
   
