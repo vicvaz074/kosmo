@@ -1,119 +1,201 @@
-.login-component {
-    position: relative;
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap');
+
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f0f0; /* Fondo principal */
+  color: white; /* Texto principal en blanco */
+  font-family: 'IBM Plex Mono', monospace;
+  position: relative;
+  z-index: 2;
+}
+
+.login-container-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1; /* Para que esté detrás de todo */
+  width: 62%; /* O el tamaño que necesites */
+  height: auto; /* Para mantener la proporción */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /* Cambia a 'space-around' para un espaciado uniforme */
+  background-color: #f0f0f0;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative; /* Agregado para posicionar absolutamente el robot respecto a este contenedor */
+}
+
+.login-panel {
+  background-color: #262EC9; /* Panel de inicio de sesión */
+  padding: 3rem;
+  border-radius: 1rem;
+  width: 400px; /* Ajusta el ancho según necesites */
+  position: relative;
+  z-index: 3;
+}
+
+.login-panel h1 {
+  margin-bottom: 2rem;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+}
+
+.login-form h1 {
+  margin-bottom: 2rem;
+  text-align: center;
+  
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid white; /* Borde blanco */
+  background: transparent;
+  color: white;
+}
+
+.loginButton {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: white;
+  color: #262EC9;
+  cursor: pointer;
+}
+
+.input-group {
+  position: relative; /* Para posicionar los iconos de manera absoluta dentro de cada grupo de entrada */
+  margin-bottom: 1rem;
+}
+
+.input-icon {
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px; /* Ajusta el tamaño de los iconos según necesites */
+  height: auto;
+  pointer-events: none; /* Esto asegura que el icono no interfiera con la entrada del usuario */
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px 10px 10px 40px; /* Ajusta el padding izquierdo para hacer espacio para el ícono */
+  border-radius: 0.5rem;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  outline: none; /* Elimina el contorno cuando el campo está enfocado */
+}
+
+
+.loginButton:hover {
+  background: #f7f7f7d8;
+}
+
+.login-register-link {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.login-register-link span {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.login-robot {
+  position: absolute;
+  transform: translateX(-100%);
+  bottom: 8.7rem;
+  background-color: #262EC9;
+  border: 5px solid white;
+  border-radius: 50%;
+  padding: 0; /* Ajusta si quieres que el círculo sea más grande */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 450px; /* Nuevo ancho para el círculo */
+  height: 450px; /* Nuevo alto para el círculo */
+}
+
+.login-robot img {
+  max-width: 450px; /* Nuevo ancho máximo para la imagen */
+  max-height: 450px; /* Nuevo alto máximo para la imagen */
+  width: 100%; /* Esto hará que la imagen crezca para llenar el contenedor */
+  height: auto; /* Esto mantendrá la proporción de la imagen */
+}
+
+.floating-robot {
+  animation: float 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); } /* Ajusta la cantidad de flotación aquí */
+}
+
+/* Estilos para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .login-wrapper {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 110vh;
+  }
+
+  .login-panel {
+    width: 90%;
+    margin-top: 12rem;
+    height: 650px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .login-robot {
+    position: absolute;
+    transform: translateX(0%);
+    bottom: 10rem;
+    background-color: #262EC9;
+    border: 5px solid white;
+    border-radius: 50%;
+    padding: 0; /* Ajusta si quieres que el círculo sea más grande */
+    box-sizing: border-box;
     display: flex;
-    justify-content: flex-end; /* Alinea el contenedor de entrada hacia la derecha */
+    justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: white; /* Color de fondo en caso de que la imagen no cargue */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 200px; /* Nuevo ancho para el círculo */
+    height: 200px; /* Nuevo alto para el círculo */
+    z-index: 5;
   }
   
-  .login-background {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 90%; /* Tamaño máximo por defecto */
-    width: auto; /* Permite que la imagen mantenga su proporción */
-    height: auto;
-    min-height: 80%; /* Asegura que la imagen cubra la altura */
-    object-fit: cover; /* Cubre el área sin perder proporciones */
-    z-index: 1;
-  }
-  
-  .input-container {
-    position: absolute;
-    right: 17%; /* Comienza más cerca del lado derecho de la pantalla */
-    display: flex;
-    top: 41.8%;
-    flex-direction: column;
-    align-items: flex-end; /* Alinea los campos de texto y el botón hacia la derecha */
-    gap: 73px; /* Espacio entre campos de texto y botón */
-    z-index: 2;
-  }
-  
-  .text-input {
-    font-size: 20px;
-    padding: 2px;
-    border: 2px solid #FFFFFF;
-    border-radius: 4px;
-    background-color: transparent;
-    color: white;
-    width: 400px; /* Ancho fijo para los campos de texto */
-    z-index: 2;
-  }
-  
-  .register-button button {
-    position: absolute;
-    padding: 18px 151px; /* Ajusta el padding según el diseño */
-    border: 2px solid white; /* Borde blanco */
-    border-radius: 20px; /* Esquinas redondeadas */
-    background-color: transparent; /* Fondo transparente */
-    color: white; /* Color del texto */
-    top: 72%;
-    right: 20.6%;
-    font-size: 16px; /* Tamaño del texto */
-    cursor: pointer; /* Cursor tipo puntero */
-    text-decoration: none; /* Sin subrayado */
-    z-index: 3;
-  }
-  
-  
-  .register-button button:hover {
-    background-color: white; /* Cambio de color al pasar el mouse para efecto visual */
-    opacity: 0.5; /* Reducción de opacidad al pasar el mouse */
-    color: #1B1464; /* Cambio de color del texto al pasar el mouse */
-  }
-  /* Media queries */
 
-  
-  @media (max-width: 768px) {
-    .login-background {
-      max-width: 95%; /* Ajusta el tamaño de la imagen en dispositivos móviles */
-      object-fit: cover; /* Mantiene el aspecto de cubrir pero permite reposicionar */
-      object-position: right center; /* Alinea la imagen hacia la izquierda y centrada verticalmente */
-      min-height: 47%;
-    }
-    
-    .input-container {
-        position: absolute;
-        right: 22%; /* Comienza más cerca del lado derecho de la pantalla */
-        display: flex;
-        top: 43.4%;
-        flex-direction: column;
-        align-items: flex-end; /* Alinea los campos de texto y el botón hacia la derecha */
-        gap: 30.72px; /* Espacio entre campos de texto y botón */
-        z-index: 2;
-      }
-
-      .text-input {
-        font-size: 16px;
-        padding: 1px;
-        border: 2px solid #FFFFFF;
-        border-radius: 4px;
-        background-color: transparent;
-        color: white;
-        width: 178px; /* Ancho fijo para los campos de texto */
-        z-index: 2;
-      }
-
-      .register-button button {
-        position: absolute;
-        padding: 12px 94px; /* Ajusta el padding según el diseño */
-        border: 2px solid white; /* Borde blanco */
-        border-radius: 20px; /* Esquinas redondeadas */
-        background-color: transparent; /* Fondo transparente */
-        color: white; /* Color del texto */
-        top: 62%;
-        right: 27%;
-        font-size: 16px; /* Tamaño del texto */
-        cursor: pointer; /* Cursor tipo puntero */
-        text-decoration: none; /* Sin subrayado */
-        z-index: 3;
-      }
-
-      .register-button button:hover {
-        background-color: white; /* Cambio de color al pasar el mouse para efecto visual */
-        opacity: 0.5; /* Reducción de opacidad al pasar el mouse */
-        color: #1B1464; /* Cambio de color del texto al pasar el mouse */
-      }
+  .floating-robot {
+    width: 40%; /* Hace que la imagen del robot use todo el ancho disponible */
   }
+}

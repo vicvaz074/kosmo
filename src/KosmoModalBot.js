@@ -14,4 +14,3 @@ const KosmoModalBot = ({ onClose }) => {
 };
 
 export default KosmoModalBot;
-
