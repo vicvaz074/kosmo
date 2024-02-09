@@ -121,7 +121,7 @@
     .register-robot {
       position: absolute;
       transform: translateX(0%);
-      bottom: 1.5rem;
+      bottom: 2.5rem;
       background-color: #262EC9;
       border: 5px solid white;
       border-radius: 50%;
