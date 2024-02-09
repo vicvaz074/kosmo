@@ -42,14 +42,29 @@ const KosmoCustomizationComponent = () => {
   return (
     <div className="kosmo-customization-section">
       <button onClick={() => changeOutfit(previousOutfitIndex)}>{"<"}</button>
-      <img src={outfits[previousOutfitIndex]} alt="Previous Outfit" className="kosmo-outfit side-outfit" />
+  
+      {/* Outfit anterior */}
+      <div className="kosmo-outfit-container">
+        <img src={outfits[previousOutfitIndex]} alt="Previous Outfit" className="kosmo-outfit side-outfit" />
+        <div className="outfit-shadow-side"></div>
+      </div>
+  
+      {/* Outfit actual */}
       <div className="center-outfit">
-        {/* Añade aquí la imagen de la cabeza de Kosmo */}
         <img src={head} alt="Kosmo's Head" className="kosmo-head" />
         <img src={kosmoBotBasico} alt="Kosmo Bot Básico" className="kosmo-bot" />
-        <img src={outfits[outfitIndex]} alt="Current Outfit" className={`kosmo-outfit ${isChanging ? 'animate-change' : ''}`} />
+        <div className="kosmo-outfit-container">
+          <img src={outfits[outfitIndex]} alt="Current Outfit" className={`kosmo-outfit ${isChanging ? 'animate-change' : ''}`} />
+          <div className="outfit-shadow"></div>
+        </div>
       </div>
-      <img src={outfits[nextOutfitIndex]} alt="Next Outfit" className="kosmo-outfit side-outfit" />
+  
+      {/* Outfit siguiente */}
+      <div className="kosmo-outfit-container">
+        <img src={outfits[nextOutfitIndex]} alt="Next Outfit" className="kosmo-outfit side-outfit" />
+        <div className="shadow-side"></div>
+      </div>
+  
       <button onClick={() => changeOutfit(nextOutfitIndex)}>{">"}</button>
     </div>
   );

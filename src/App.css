@@ -714,7 +714,9 @@ body, .main-page {
   background-color: #ffffff; /* Fondo claro para la sección, ajusta esto según tu diseño */
   position: relative;
   z-index: 2;
+  width: 100%;
 }
+
 
 .customization-section h2 {
   color: #262EC9; /* Color azul */
@@ -766,6 +768,45 @@ body, .main-page {
   left: 15%;
   z-index: 5;
   transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.outfit-shadow {
+  width: 55%; /* Asegúrate de que el ancho sea el adecuado para tus outfits */
+  height: 50px; /* Altura para darle la forma elíptica a la sombra */
+  background-color: rgba(10, 10, 62, 0.729); /* Ajusta los valores rgba para el color y transparencia */
+  border-radius: 50%;
+  margin-top: 40px; /* Aumenta el margen para bajar la sombra */
+  position: absolute; /* Cambia a posición absoluta para controlar mejor la ubicación */
+  bottom: -90px; /* Posiciona la sombra debajo del outfit */
+  left: 50%;
+  transform: translateX(-50%) scaleX(1.5); /* Centra y estira la sombra horizontalmente */
+  z-index: -1;
+}
+
+.shadow-side {
+  width: 11.25%; /* Asegúrate de que el ancho sea el adecuado para tus outfits */
+  height: 50px; /* Altura para darle la forma elíptica a la sombra */
+  background-color: rgba(10, 10, 62, 0.358); /* Ajusta los valores rgba para el color y transparencia */
+  border-radius: 50%;
+  margin-top: -10px; /* Aumenta el margen para bajar la sombra */
+  position: absolute; /* Cambia a posición absoluta para controlar mejor la ubicación */
+  bottom: 212px; /* Posiciona la sombra debajo del outfit */
+  left: 22%;
+  transform: translateX(0%) scaleX(1.5); /* Centra y estira la sombra horizontalmente */
+  z-index: -1;
+}
+
+.outfit-shadow-side {
+  width: 11.25%; /* Asegúrate de que el ancho sea el adecuado para tus outfits */
+  height: 50px; /* Altura para darle la forma elíptica a la sombra */
+  background-color: rgba(10, 10, 62, 0.358); /* Ajusta los valores rgba para el color y transparencia */
+  border-radius: 50%;
+  margin-top: -10px; /* Aumenta el margen para bajar la sombra */
+  position: absolute; /* Cambia a posición absoluta para controlar mejor la ubicación */
+  bottom: 212px; /* Posiciona la sombra debajo del outfit */
+  left: 68.3%;
+  transform: translateX(0%) scaleX(1.5); /* Centra y estira la sombra horizontalmente */
+  z-index: -1;
 }
 
 
@@ -851,16 +892,17 @@ body, .main-page {
 @media (max-width: 768px) {
   .kosmo-customization-section {
     height: 30px;
-    width: 320px;
+    width: 100%;
     gap: 18px; /* Espacio entre los elementos de la sección */
     margin-top: 6rem; /* Espacio por encima de la sección de personalización */
   }
   .kosmo-bot {
-    height: 80px; /* Tamaño más pequeño para dispositivos móviles */
+    height: 110px; /* Tamaño más pequeño para dispositivos móviles */
   }
 
   .kosmo-outfit {
-    height: 90px; /* Tamaño más pequeño para dispositivos móviles */
+    height: 120px; /* Tamaño más pequeño para dispositivos móviles */
+    margin-top: 2.5px;
   }
 
   .side-outfit {
@@ -883,12 +925,51 @@ body, .main-page {
 
   .kosmo-head {
     /* Ajusta estos estilos según necesites */
-    width: 66px ;; /* Ejemplo de tamaño */
+    width: 88px ;; /* Ejemplo de tamaño */
     position: absolute; /* Posicionamiento respecto al contenedor .center-outfit */
-    top: 19%; /* Ajusta según sea necesario */
-    left: 49%; /* Centrar la cabeza respecto al contenedor */
+    top: 20.5%; /* Ajusta según sea necesario */
+    left: 48%; /* Centrar la cabeza respecto al contenedor */
     transform: translateX(-50%); /* Ajuste fino para centrar exactamente la imagen */
     z-index: 6;
+  }
+
+  .outfit-shadow {
+    width: 50%; /* Asegúrate de que el ancho sea el adecuado para tus outfits */
+    height: 20px; /* Altura para darle la forma elíptica a la sombra */
+    background-color: rgba(10, 10, 62, 0.729); /* Ajusta los valores rgba para el color y transparencia */
+    border-radius: 50%;
+    margin-top: 40px; /* Aumenta el margen para bajar la sombra */
+    position: absolute; /* Cambia a posición absoluta para controlar mejor la ubicación */
+    bottom: -35px; /* Posiciona la sombra debajo del outfit */
+    left: 50%;
+    transform: translateX(-50%) scaleX(1.5); /* Centra y estira la sombra horizontalmente */
+    z-index: -1;
+  }
+  
+  .shadow-side {
+    width: 13%; /* Asegúrate de que el ancho sea el adecuado para tus outfits */
+    height: 20px; /* Altura para darle la forma elíptica a la sombra */
+    background-color: rgba(10, 10, 62, 0.358); /* Ajusta los valores rgba para el color y transparencia */
+    border-radius: 50%;
+    margin-top: -10px; /* Aumenta el margen para bajar la sombra */
+    position: absolute; /* Cambia a posición absoluta para controlar mejor la ubicación */
+    bottom: 192px; /* Posiciona la sombra debajo del outfit */
+    left: 19%;
+    transform: translateX(0%) scaleX(1.5); /* Centra y estira la sombra horizontalmente */
+    z-index: -1;
+  }
+  
+  .outfit-shadow-side {
+    width: 13%; /* Asegúrate de que el ancho sea el adecuado para tus outfits */
+    height: 20px; /* Altura para darle la forma elíptica a la sombra */
+    background-color: rgba(10, 10, 62, 0.358); /* Ajusta los valores rgba para el color y transparencia */
+    border-radius: 50%;
+    margin-top: -10px; /* Aumenta el margen para bajar la sombra */
+    position: absolute; /* Cambia a posición absoluta para controlar mejor la ubicación */
+    bottom: 192px; /* Posiciona la sombra debajo del outfit */
+    left: 70%;
+    transform: translateX(0%) scaleX(1.5); /* Centra y estira la sombra horizontalmente */
+    z-index: -1;
   }
   
 
