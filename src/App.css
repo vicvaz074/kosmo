@@ -855,9 +855,12 @@ body, .main-page {
     gap: 18px; /* Espacio entre los elementos de la sección */
     margin-top: 6rem; /* Espacio por encima de la sección de personalización */
   }
-  .kosmo-bot,
-  .kosmo-outfit {
+  .kosmo-bot {
     height: 80px; /* Tamaño más pequeño para dispositivos móviles */
+  }
+
+  .kosmo-outfit {
+    height: 90px; /* Tamaño más pequeño para dispositivos móviles */
   }
 
   .side-outfit {
