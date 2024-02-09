@@ -49,7 +49,7 @@ const LoginComponent = () => {
           </div>
           <button type="submit" className='loginButton'>Iniciar Sesión</button>
           <p className="login-register-link">
-            ¿No trabajas con Kosmo? <span onClick={() => navigate('/register')}>Regístrate aquí</span>
+            ¿No trabajas con Kosmo? <span onClick={() => navigate('/registrarse')}>Regístrate aquí</span>
           </p>
         </form>
       </div>

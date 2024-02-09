@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap');
+
+.register-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f0f0; /* Fondo principal */
+  color: white; /* Texto principal en blanco */
+  font-family: 'IBM Plex Mono', monospace;
+  position: relative;
+  z-index: 2;
+}
+
+.register-container-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1; /* Para que esté detrás de todo */
+  width: 68%; /* O el tamaño que necesites */
+  height: auto; /* Para mantener la proporción */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.register-panel {
+  background-color: #262EC9; /* Panel de registro */
+  padding: 3rem;
+  border-radius: 1rem;
+  width: 400px; /* Ajusta el ancho según necesites */
+  position: relative;
+  z-index: 3;
+}
+
+.register-panel h1 {
+  margin-bottom: 2rem;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+}
+
+.registerButton {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: white;
+    color: #262EC9;
+    cursor: pointer;
+  }
+
+.registerButton:hover {
+    background: #f7f7f7d8;
+  }
+  
+.registerButton-link {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+.login-register-link span {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+
+.input-field {
+    width: 100%;
+    padding: 10px 10px 10px 40px; /* Ajusta el padding izquierdo para hacer espacio para el ícono */
+    border-radius: 0.5rem;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    outline: none; /* Elimina el contorno cuando el campo está enfocado */
+  }
+
+/* Estilos para input, botones y enlaces son similares a LoginComponent, ajustar según sea necesario */
+
+.register-robot {
+  position: absolute;
+  transform: translateX(-106%);
+  bottom: 7rem;
+  background-color: #262EC9; /* Fondo azul para el círculo detrás del robot */
+  border: 5px solid white; /* Contorno blanco */
+  border-radius: 50%; /* Hace que el fondo sea circular */
+  padding: 0; /* Ajusta si quieres que el círculo sea más grande */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 450px; /* Nuevo ancho para el círculo */
+  height: 450px; /* Nuevo alto para el círculo */
+}
+
+.register-robot img {
+  max-width: 450px; /* Nuevo ancho máximo para la imagen */
+  max-height: 450px; /* Nuevo alto máximo para la imagen */
+  width: 100%; /* Esto hará que la imagen crezca para llenar el contenedor */
+  height: auto; /* Esto mantendrá la proporción de la imagen */
+}
+
+/* Animación flotante igual que en LoginComponent.css */
+
+/* Estilos para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .register-wrapper {
+      flex-direction: column-reverse;
+      justify-content: flex-end;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      height: 110vh;
+    }
+  
+    .register-panel {
+      width: 90%;
+      margin-top: 10rem;
+      height: 650px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  
+    .register-robot {
+      position: absolute;
+      transform: translateX(0%);
+      bottom: 12rem;
+      background-color: #262EC9;
+      border: 5px solid white;
+      border-radius: 50%;
+      padding: 0; /* Ajusta si quieres que el círculo sea más grande */
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 150px; /* Nuevo ancho para el círculo */
+      height: 150px; /* Nuevo alto para el círculo */
+      z-index: 5;
+    }
+    
+  
+    .floating-robot {
+      width: 40%; /* Hace que la imagen del robot use todo el ancho disponible */
+    }
+  }
+  
