@@ -162,6 +162,13 @@
 
 /* Estilos para pantallas más pequeñas */
 @media (max-width: 768px) {
+  .login-panel h1 {
+    margin-bottom: 2rem;
+    text-align: center;
+    color: white;
+    font-size: 1.7rem;
+  }
+
   .login-wrapper {
     flex-direction: column;
     justify-content: center;
@@ -180,9 +187,9 @@
   .login-robot {
     position: static; /* Elimina la posición absoluta */
     margin: 1rem auto 0; /* Centra el robot y agrega margen superior */
-    margin-bottom: -9rem;
-    width: 180px; /* Tamaño del círculo */
-    height: 180px; /* Tamaño del círculo */
+    margin-bottom: -10rem;
+    width: 150px; /* Tamaño del círculo */
+    height: 150px; /* Tamaño del círculo */
     background-color: #262EC9; /* Fondo azul para el círculo detrás del robot */
     border: 3px solid white; /* Contorno blanco */
     border-radius: 50%; /* Hace que el fondo sea circular */
