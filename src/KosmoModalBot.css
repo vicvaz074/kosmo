@@ -1,0 +1,83 @@
+.modalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegúrate de que está por encima de otros elementos */
+  }
+  
+  .modalContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px; /* Ajusta según tus necesidades */
+    position: relative; /* Para posicionar el botón de cierre correctamente */
+  }
+  
+  .closeModalButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    /* Estilos adicionales para el botón de cierre */
+  }
+  
+
+  .chat-button-modal {
+    position: fixed;
+    right: 15px;
+    bottom: 40px;
+    z-index: 1000; /* Asegúrate de que esté sobre otros elementos */
+    border: none; /* Ajusta según tu diseño */
+    background-color: #262EC9; 
+    cursor: pointer;
+    border-radius: 50%; /* Hace el botón completamente circular */
+    display: flex; /* Centra la imagen dentro del botón */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    width: 70px; /* Ajusta al tamaño deseado para el círculo */
+    height: 70px; /* Ajusta al tamaño deseado para el círculo */
+  }
+  
+  .chat-button-modal img {
+    width: 50px; /* Ajusta según el tamaño deseado para el icono */
+    height: auto;
+  }
+  
+
+  .modalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050; /* Asegúrate de que el modal está sobre otros elementos. */
+  }
+  
+  .modalContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative; /* Para el botón de cierre */
+    max-width: 500px; /* O el ancho que prefieras */
+    max-height: 90vh;
+    overflow-y: auto; /* Para manejar el desbordamiento de contenido */
+  }
+  
+  .closeModalButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgb(202, 50, 50);
+    color: white;
+    cursor: pointer;
+  }
+  

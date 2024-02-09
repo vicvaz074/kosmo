@@ -21,6 +21,7 @@ import outfitRed from './assets/img/CONJUNTO_ROJOV3.svg';
 import outfitBlue from './assets/img/CONJUNTO_AZULV2.svg';
 import outfitYellow from './assets/img/CONJUNTO_AMARILLOV2.svg';
 import head from './assets/img/CABEZA.png';
+import KosmoModalBot from './KosmoModalBot';
 
 const KosmoCustomizationComponent = () => {
   const [outfitIndex, setOutfitIndex] = useState(0);
@@ -57,6 +58,8 @@ const KosmoCustomizationComponent = () => {
 function App() {
   const [isHovering, setIsHovering] = useState(false);
   const [navExpanded, setNavExpanded] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
 
   useEffect(() => {
     const updateContentMargin = () => {
@@ -118,9 +121,6 @@ function App() {
                 <NavLink className="nav-link" to="/#planes">Planes</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/#custom">Personalizar</NavLink>
-              </li>
-              <li className="nav-item">
                 <NavLink className="nav-link" to="/#contactanos">Contáctanos</NavLink>
               </li>
               <li className="nav-item">
@@ -139,6 +139,10 @@ function App() {
         <Route path="/registrarse" element={<RegisterComponent />} />
         <Route path="/tryme" element={<KosmoTryComponent />} />
       </Routes>
+      <button className="chat-button-modal" onClick={() => setShowModal(true)}>
+        <img src={kosmoBotBasico} alt="Chat con Kosmo" />
+      </button>
+      {showModal && <KosmoModalBot onClose={() => setShowModal(false)} />}
     </Router>
   );
 }

@@ -758,23 +758,16 @@ body, .main-page {
 }
 
 .kosmo-outfit {
-  height: 330px; /* Ajusta esto según el tamaño que deseas para las imágenes */
-  width: auto;
+  height: 360px; /* Altura fija para todos los outfits */
+  width: auto; /* Mantiene la proporción original de la imagen */
+  max-width: 316px; /* Ancho máximo basado en outfitYellow */
   position: absolute;
-  bottom: 0%;
+  top: -9%;
+  left: 15%;
   z-index: 5;
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.kosmo-outfit {
-  height: 330px; /* Altura fija para todos los outfits */
-  width: auto; /* Mantiene la proporción original de la imagen */
-  max-width: 316px; /* Ancho máximo basado en outfitYellow */
-  position: absolute;
-  left: 17%;
-  z-index: 5;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
 
 .kosmo-head {
   /* Ajusta estos estilos según necesites */
