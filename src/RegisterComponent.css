@@ -107,7 +107,7 @@
     margin-top: -1rem;
     text-align: center;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.45rem;
   }
 
   .register-wrapper {
@@ -127,8 +127,9 @@
 
   .register-robot {
     position: static; /* Elimina la posición absoluta */
+    position: static; /* Elimina la posición absoluta */
     margin: 1rem auto 0; /* Centra el robot y agrega margen superior */
-    margin-bottom: -10.5rem;
+    margin-bottom: -11rem;
     width: 110px; /* Tamaño del círculo */
     height: 110px; /* Tamaño del círculo */
     background-color: #262EC9; /* Fondo azul para el círculo detrás del robot */
@@ -136,7 +137,7 @@
     border-radius: 50%; /* Hace que el fondo sea circular */
     display: flex;
     transform: translateX(0%);
-    transform: translateY(10%);
+    transform: translateY(0%);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ajusta la sombra */
   }
 
