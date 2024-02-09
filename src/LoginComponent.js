@@ -51,10 +51,10 @@ const LoginComponent = () => {
           <p className="login-register-link">
             ¿No trabajas con Kosmo? <span onClick={() => navigate('/registrarse')}>Regístrate aquí</span>
           </p>
+          <div className="login-robot">
+            <img src={loginBasicBot} alt="Kosmo Bot" className="floating-robot" />
+          </div>
         </form>
-      </div>
-      <div className="login-robot">
-        <img src={loginBasicBot} alt="Kosmo Bot" className="floating-robot" />
       </div>
     </div>
   );

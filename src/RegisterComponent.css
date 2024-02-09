@@ -79,10 +79,10 @@
 
 .register-robot {
   position: absolute;
-  transform: translateX(-106%);
-  bottom: 7rem;
+  transform: translateX(-115%);
+  bottom: -3.2rem;
   background-color: #262EC9; /* Fondo azul para el círculo detrás del robot */
-  border: 5px solid white; /* Contorno blanco */
+  border: 10px solid white; /* Contorno blanco */
   border-radius: 50%; /* Hace que el fondo sea circular */
   padding: 0; /* Ajusta si quieres que el círculo sea más grande */
   display: flex;
@@ -100,45 +100,41 @@
   height: auto; /* Esto mantendrá la proporción de la imagen */
 }
 
-/* Animación flotante igual que en LoginComponent.css */
 
-/* Estilos para pantallas más pequeñas */
 @media (max-width: 768px) {
-    .register-wrapper {
-      flex-direction: column-reverse;
-      justify-content: flex-end;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      height: 110vh;
-    }
-  
-    .register-panel {
-      width: 90%;
-      margin-top: 10rem;
-      height: 650px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-  
-    .register-robot {
-      position: absolute;
-      transform: translateX(0%);
-      bottom: 3rem;
-      background-color: #262EC9;
-      border: 5px solid white;
-      border-radius: 50%;
-      padding: 0; /* Ajusta si quieres que el círculo sea más grande */
-      box-sizing: border-box;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      width: 150px; /* Nuevo ancho para el círculo */
-      height: 150px; /* Nuevo alto para el círculo */
-      z-index: 5;
-    }
-    
-  
-    .floating-robot {
-      width: 40%; /* Hace que la imagen del robot use todo el ancho disponible */
-    }
+  .register-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    height: auto; /* Ajusta la altura según el contenido */
+    padding-top: 4rem; /* Añade espacio en la parte superior para alejarse de la navbar */
+    padding-bottom: 2rem; /* Agrega espacio en la parte inferior */
   }
-  
+
+  .register-panel {
+    width: 90%;
+    margin: 2rem auto; /* Aumenta el margen superior para más espacio desde la parte superior */
+    padding-bottom: 200px; /* Espacio extra en la parte inferior para el robot */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .register-robot {
+    position: static; /* Elimina la posición absoluta */
+    margin: 1rem auto 0; /* Centra el robot y agrega margen superior */
+    margin-bottom: -9rem;
+    width: 180px; /* Tamaño del círculo */
+    height: 180px; /* Tamaño del círculo */
+    background-color: #262EC9; /* Fondo azul para el círculo detrás del robot */
+    border: 3px solid white; /* Contorno blanco */
+    border-radius: 50%; /* Hace que el fondo sea circular */
+    display: flex;
+    transform: translateX(0%);
+    transform: translateY(10%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ajusta la sombra */
+  }
+
+  .floating-robot {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+  }
+}
