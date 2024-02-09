@@ -179,7 +179,7 @@
   .login-robot {
     position: absolute;
     transform: translateX(0%);
-    bottom: 8.5rem;
+    bottom: 4rem;
     background-color: #262EC9;
     border: 5px solid white;
     border-radius: 50%;
