@@ -237,3 +237,15 @@
       padding: 12px 14px; /* Ajuste de padding para mantener el tamaño */
     }
     }
+
+  @media (max-width: 768px) {
+    .dark-mode .closeModalButton {
+      position: absolute;
+      top: 10px;
+      right: 50px;
+      transform: translateY(210%);
+      background-color: transparent;
+      color: white;
+      cursor: pointer;
+    } 
+  }
