@@ -226,14 +226,15 @@
 
 
   @media (max-width: 768px) {
-  /* Estilos para enlaces de navegación en estado hover */
-  .dark-mode .navbar .nav-link {
-    background-color: transparent !important; /* Color de fondo al pasar el cursor */
-    color: white !important; /* Color de texto */
-  }
-
-  .dark-mode  .nav-link {
-    border-radius: 20px; /* Bordes redondeados */
-    padding: 12px 14px; /* Ajuste de padding para mantener el tamaño */
-  }
-  }
+    /* Estilos para enlaces de navegación en estado hover */
+    .dark-mode .navbar .nav-link {
+      background-color: transparent !important; /* Color de fondo al pasar el cursor */
+      color: white !important; /* Color de texto */
+    }
+  
+    .dark-mode  .nav-link {
+      border-radius: 20px; /* Bordes redondeados */
+  
+      padding: 12px 14px; /* Ajuste de padding para mantener el tamaño */
+    }
+    }
