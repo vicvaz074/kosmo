@@ -546,7 +546,7 @@ body, .main-page {
   }
   
   .card-text {
-  color: #6c757d;
+  color: black;
   font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
   font-style: light;
   font-size: 1rem;

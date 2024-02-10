@@ -186,3 +186,35 @@
     background-color: #ffffff;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
 }
+
+  .dark-mode .card-body {
+    padding: 1rem;
+    background-color: #261b86;
+    }
+
+  .dark-mode .card {
+    width: calc(33.333% - 1rem);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    font-weight: 700;
+    background-color: #261b86;
+    overflow: hidden;
+    animation: fadeInUp 1s both;
+    transition: transform 0.3s ease;
+    }
+
+  .dark-mode .card-title {
+      color: white; /* Color azul */
+      font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
+      font-size: 1.25rem;
+      font-weight: 700;
+      font-style: bold;
+      margin-bottom: 0.5rem;
+      }
+      
+  .dark-mode .card-text {
+      color: white;
+      font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
+      font-style: light;
+      font-size: 1rem;
+      }
