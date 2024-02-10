@@ -61,7 +61,6 @@
 
   .dark-mode  .nav-link {
     border-radius: 20px; /* Bordes redondeados */
-    backdrop-filter: blur(10px);
     padding: 12px 14px; /* Ajuste de padding para mantener el tamaño */
   }
 
