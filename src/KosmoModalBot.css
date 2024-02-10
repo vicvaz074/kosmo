@@ -12,7 +12,7 @@
 }
 
 .modalContent {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0) !important;
   padding: 20px;
   border-radius: 8px;
   max-width: 500px; /* Ajusta según tus necesidades */
@@ -21,6 +21,8 @@
 
 .closeModalButton {
   position: absolute;
+  height: max-content;
+  width: 2rem;
   top: 10px;
   right: 10px;
   /* Estilos adicionales para el botón de cierre */
@@ -64,7 +66,7 @@
 
 .modalContent {
   background-color: white;
-  padding: 20px;
+  padding: 0px;
   border-radius: 8px;
   position: relative; /* Para el botón de cierre */
   max-width: 500px; /* O el ancho que prefieras */
@@ -75,8 +77,22 @@
 .closeModalButton {
   position: absolute;
   top: 10px;
-  right: 10px;
-  background-color: rgb(202, 50, 50);
+  right: 65px;
+  transform: translateY(210%);
+  background-color: transparent;
   color: white;
   cursor: pointer;
+}
+
+
+@media screen and (max-width: 768px) {
+  .closeModalButton {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    transform: translateY(210%);
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+  } 
 }
