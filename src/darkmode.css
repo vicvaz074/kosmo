@@ -200,30 +200,20 @@
     }
 
   .dark-mode .card {
-    width: calc(33.333% - 1rem);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 25px;
     font-weight: 700;
     background-color: #261b86;
-    overflow: hidden;
-    animation: fadeInUp 1s both;
-    transition: transform 0.3s ease;
     }
 
   .dark-mode .card-title {
       color: white; /* Color azul */
       font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
-      font-size: 1.25rem;
       font-weight: 700;
-      font-style: bold;
-      margin-bottom: 0.5rem;
       }
       
   .dark-mode .card-text {
       color: white;
       font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
       font-style: light;
-      font-size: 1rem;
       }
 
   .dark-mode .form-group  {
@@ -233,3 +223,17 @@
   .dark-mode .form-container h2  {
     color: black;
   } 
+
+
+  @media (max-width: 768px) {
+  /* Estilos para enlaces de navegación en estado hover */
+  .dark-mode .navbar .nav-link {
+    background-color: transparent !important; /* Color de fondo al pasar el cursor */
+    color: white !important; /* Color de texto */
+  }
+
+  .dark-mode  .nav-link {
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 12px 14px; /* Ajuste de padding para mantener el tamaño */
+  }
+  }
