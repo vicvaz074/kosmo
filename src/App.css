@@ -2,7 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: right;
-  background-color: #1B1464 ;
+  background-color: #1b1464d6 ;
+  backdrop-filter: blur(2px);
   overflow: hidden;
   width: 100%;
   font-family: 'IBM Plex Mono', monospace;
@@ -25,7 +26,7 @@
 
 /* Estilos para enlaces de navegación en estado hover */
 .navbar a:hover {
-  background-color: #262EC9; /* Color de fondo al pasar el cursor */
+  background-color: #262ec9d6; /* Color de fondo al pasar el cursor */
   color: white; /* Color de texto */
   border-radius: 20px; /* Bordes redondeados */
   padding: 12px 14px; /* Ajuste de padding para mantener el tamaño */
@@ -109,7 +110,7 @@ body, .main-page {
   color: white;
   border: none;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 20px;
   text-transform: uppercase;
   font-weight: bold;
   margin: 20px 0;

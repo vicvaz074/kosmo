@@ -16,14 +16,26 @@
   }
   
   .dark-mode .navbar  {
-    background-color: var(--navbar-bg-color);
+    background-color: #1b146422;
+    backdrop-filter: blur(2px);
     color: var(--navbar-text-color);
     font-weight: 700 !important;
   }
+
+
+  .dark-mode .kosmo-logo {
+    content: url('assets/img/LOGO_BLANCO.svg');
+    filter: drop-shadow(0 0 2px #000) /* Sombra de baja opacidad alrededor del logo */
+            contrast(110%) /* Aumenta el contraste para dar más definición */
+            brightness(110%); /* Aumenta el brillo para destacar el logo */
+  }
+  
+  
+  
   
   .dark-mode .nav-link-button {
     background-color: transparent;
-    color: #262EC9;
+    color: white;
     font-weight: 700 !important;
     width: 150px;
     font-size: 1rem;
@@ -45,12 +57,13 @@
 
   /* Estilos para enlaces de navegación en estado hover */
   .dark-mode .navbar .nav-link {
-    background-color: #ffffff !important; /* Color de fondo al pasar el cursor */
-    color: #262EC9 !important; /* Color de texto */
+    background-color: #1b146422 !important; /* Color de fondo al pasar el cursor */
+    color: white !important; /* Color de texto */
   }
 
   .dark-mode  .nav-link {
     border-radius: 20px; /* Bordes redondeados */
+    backdrop-filter: blur(10px);
     padding: 12px 14px; /* Ajuste de padding para mantener el tamaño */
   }
 
@@ -84,7 +97,7 @@
   }
   
   .dark-mode .navbar-text-logo {
-    color: #262EC9; /* Color del texto */
+    color: white; /* Color del texto */
     font-family: 'IBM Plex Mono', monospace;
     font-weight: bold; /* Ajusta el grosor del texto */
     padding-left: 10px; /* Ajusta la separación entre el logo y el texto */
@@ -165,11 +178,7 @@
   .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
   }
-  
-  /* Cambios de logo en el modo oscuro */
-  .dark-mode .kosmo-logo {
-    content: url('assets/img/LOGO_BLANCO.svg'); /* Cambia la ruta según la ubicación de tu imagen */
-  }
+
   
   /* Cambio de imagen del logo en modo oscuro */
   .dark-mode .brand-logo {
