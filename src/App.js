@@ -212,7 +212,7 @@ function MainPage() {
   
   useEffect(() => {
     const starsContainer = document.querySelector('.stars-container');
-    createStars(starsContainer, 120);
+    createStars(starsContainer, 80);
   }, []);
 
   function createStars(container, numberOfStars) {

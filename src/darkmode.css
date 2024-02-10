@@ -83,7 +83,7 @@
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .navbar-text-logo {
+  .dark-mode .navbar-text-logo {
     color: #262EC9; /* Color del texto */
     font-family: 'IBM Plex Mono', monospace;
     font-weight: bold; /* Ajusta el grosor del texto */

@@ -261,12 +261,31 @@ body, .main-page {
   height: 100%;
   top: 0;
   left: 0;
+  overflow: hidden;
+  z-index: -1; /* Asegura que el contenedor de estrellas esté detrás del contenido principal */
 }
 
 .star {
   position: absolute;
   background-color: white;
+  width: 5px; /* Tamaño aumentado de la estrella */
+  height: 5px; /* Tamaño aumentado de la estrella */
+  border-radius: 50%; /* Mantiene la estrella circular */
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.8); /* Ajusta el brillo para el tamaño aumentado */
+  animation: twinkle 2s infinite ease-in-out;
 }
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5); /* Ajusta para un efecto de brillo más prominente */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.9); /* Aumenta el brillo para el tamaño más grande */
+  }
+}
+
 
 .navbar .navbar-nav .nav-link {
   color: white !important;
