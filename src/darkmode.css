@@ -18,11 +18,13 @@
   .dark-mode .navbar  {
     background-color: var(--navbar-bg-color);
     color: var(--navbar-text-color);
+    font-weight: 700 !important;
   }
   
   .dark-mode .nav-link-button {
     background-color: transparent;
     color: #262EC9;
+    font-weight: 700 !important;
     width: 150px;
     font-size: 1rem;
     border: none;
@@ -34,6 +36,7 @@
   
   .dark-mode .nav-link-button:hover {
     background-color: #262EC9;
+    font-weight: 700 !important;
     color: white;
     border-radius: 20px; /* Bordes redondeados */
     padding: 6px 14px; /* Ajuste de padding para mantener el tamaño */
