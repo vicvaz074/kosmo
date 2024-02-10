@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './RegisterComponent.css'; // Asegúrate de crear este archivo CSS o reutilizar LoginComponent.css
+import './RegisterComponent.css'; 
 import registerBasicBot from './assets/img/KOSMO_BOT_BASICO.svg';
 import registerUserIcon from './assets/img/LOGO_USER_ICONE.svg';
+import { DarkModeContext } from './DarkModeContext';
 import registerPasswordIcon from './assets/img/CANDADO.svg';
 import registerContainerBackground from './assets/img/FONDO_LOGIN_CONTENEDOR.svg';
 
@@ -11,6 +12,7 @@ const RegisterComponent = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState(''); // Nuevo estado para confirmar la contraseña
   const navigate = useNavigate();
+  const { darkMode } = useContext(DarkModeContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,7 +22,7 @@ const RegisterComponent = () => {
   };
 
   return (
-    <div className="register-wrapper">
+    <div className={`register-wrapper ${darkMode ? 'dark-mode' : ''}`}> 
       <img src={registerContainerBackground} alt="Fondo" className="register-container-background" />
       <div className="register-panel">
         <h1>REGÍSTRATE EN TU CUENTA</h1>

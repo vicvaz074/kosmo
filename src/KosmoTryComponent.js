@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
 import './KosmoStyles.css';
+import { DarkModeContext } from './DarkModeContext';
 import emailjs from 'emailjs-com';
 import kosmoLogo from './assets/img/LOGO_BLANCO.svg';
 
@@ -15,6 +16,20 @@ const KosmoTryComponent = () => {
     { sender: 'bot', message: '¡Hola! Soy Kosmo, tu asistente virtual. ¿En qué puedo ayudarte hoy?' }
   ]);
   const [isTyping, setIsTyping] = useState(false);
+  const { darkMode } = useContext(DarkModeContext);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+    
+    // Este es el "cleanup" del useEffect, se ejecuta al desmontar el componente
+    return () => {
+      document.body.classList.remove('dark-mode');
+    };
+  }, [darkMode]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -145,7 +160,7 @@ const KosmoTryComponent = () => {
   };
 
   return (
-    <div className="chat-container">
+    <div className={`chat-container ${darkMode ? 'dark-mode' : ''}`}>
       <div className="chat-header">
         <img src={kosmoLogo} alt="Logo Kosmo" style={{ width: '200px' }} />
       </div>

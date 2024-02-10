@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginComponent.css';
+import { DarkModeContext } from './DarkModeContext';
 import loginBasicBot from './assets/img/KOSMO_BOT_BASICO.svg';
 import loginUserIcone from './assets/img/LOGO_USER_ICONE.svg';
 import loginPasswordIcone from './assets/img/CANDADO.svg';
@@ -11,6 +12,7 @@ const LoginComponent = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const { darkMode } = useContext(DarkModeContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,7 +22,7 @@ const LoginComponent = () => {
   };
 
   return (
-    <div className="login-wrapper">
+    <div className={`login-wrapper ${darkMode ? 'dark-mode' : ''}`}> 
       <img src={loginContainerBackground} alt="Fondo" className="login-container-background" />
       <div className="login-panel">
         <h1>INICIA SESIÓN EN TU CUENTA</h1>

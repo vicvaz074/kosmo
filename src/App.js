@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { useDarkMode } from './DarkModeContext';
 import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import LoginComponent from './LoginComponent';
 import RegisterComponent from './RegisterComponent';
 import KosmoTryComponent from './KosmoTryComponent';
+import './darkmode.css';
 import logo from './assets/img/LOGO_AZULOSC.svg';
 import kosmoLogo from './assets/img/KOSMO_AZUL.svg';
 import kosmoOxxo from './assets/img/KOSMO_OXXO.svg';
@@ -74,6 +76,8 @@ function App() {
   const [isHovering, setIsHovering] = useState(false);
   const [navExpanded, setNavExpanded] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const { darkMode, toggleDarkMode } = useDarkMode();
+
 
 
   useEffect(() => {
@@ -98,8 +102,9 @@ function App() {
 
 
   return (
+    <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
     <Router>
-      <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+      <nav className={`navbar navbar-expand-lg fixed-top`}>
         <div className="container">
           <div
             className="navbar-brand"
@@ -124,6 +129,7 @@ function App() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
+          </div>
           <div className={`collapse navbar-collapse ${navExpanded ? 'show' : ''}`} id="navbarNav">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
@@ -144,9 +150,15 @@ function App() {
               <li className="nav-item">
                 <NavLink className="nav-link" to="/registrarse">Registrarse</NavLink>
               </li>
+              <li className="nav-item">
+              <div> {/* Ajusta el padding o el width según necesites */}
+              <button className="nav-link-button" onClick={toggleDarkMode}>
+                Modo Oscuro
+              </button>
+            </div>
+              </li>
             </ul>
           </div>
-        </div>
       </nav>
       <Routes>
         <Route path="/" element={<MainPage />} />
@@ -159,6 +171,7 @@ function App() {
       </button>
       {showModal && <KosmoModalBot onClose={() => setShowModal(false)} />}
     </Router>
+    </div>
   );
 }
 
@@ -168,6 +181,7 @@ function MainPage() {
   const location = useLocation();
   const navigate = useNavigate(); // Agrega esta línea
   const [activeIndex, setActiveIndex] = useState(0);
+  const { darkMode } = useDarkMode();
 
   const handleSelect = (selectedIndex, e) => {
     setActiveIndex(selectedIndex);
@@ -219,8 +233,9 @@ function MainPage() {
   }
 
     return (
-      <div className="main-page">
-        <div id="inicio" className="main-content">
+      
+      <div className={`main-page ${darkMode ? 'dark-mode' : ''}`}>
+        <div id="inicio" className={`main-content ${darkMode ? 'dark-mode' : ''}`}>
           <img src={kosmoLogo} alt="Kosmo Logo" className="kosmo-logo" style={{ width: '900px' }} />
           <h2>UN CHATBOT DE OTRO PLANETA</h2>
           <p>Únete y conócelo</p>
@@ -233,7 +248,7 @@ function MainPage() {
           </div>
           <img src={earth} alt="Media planeta" className="earth" />
         </div>
-        <div id="nosotros" className="section-nosotros">
+        <div id="nosotros" className={`section-nosotros ${darkMode ? 'dark-mode' : ''}`}>
           <h2 className="nosotros-title">¿QUIÉNES SOMOS? CONOCE NUESTRA HISTORIA Y ÚNETE A NUESTRA ESTRATEGIA</h2>
           <Carousel activeIndex={activeIndex} onSelect={handleSelect} interval={null}>
             <Carousel.Item>
@@ -316,7 +331,7 @@ function MainPage() {
       </div>
     </div>
         {/* Sección de personalización de Kosmo */}
-        <div id="custom" className="customization-section">
+        <div id="custom" className={`customization-section ${darkMode ? 'dark-mode' : ''}`}>
           <h2>¡SERVICIO COMPLETO DE PERSONALIZACIÓN!</h2>
           <KosmoCustomizationComponent />
           <p className="customization-description">

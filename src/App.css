@@ -8,47 +8,13 @@
   font-family: 'IBM Plex Mono', monospace;
   top: 0;
   z-index: 1000;
+  
 }
+
 
 .navbar-logo {
   display: flex;
   align-items: left;
-}
-
-.navbar-menu {
-  display: flex;
-  align-items: right;
-}
-
-.navbar-menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.navbar-menu li {
-  margin-left: 20px;
-}
-
-.navbar-menu a {
-  display: block;
-  color: white;
-  text-align: center;
-  font-family: 'IBM Plex Mono', monospace;
-  padding: 14px 16px;
-  text-decoration: none;
-  background-color: #1B1464;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.navbar-menu a:hover {
-  background-color: #262EC9;
-  color: white;
-  border-radius: 20px;
-  padding: 12px 14px;
-
 }
 
 .main-content {
@@ -57,48 +23,12 @@
   margin-top: 70px; /* Add margin top to avoid overlap with the navbar */
 }
 
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-  .navbar-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #1B1464;
-    flex-direction: column;
-    padding: 10px;
-    z-index: 1001;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  .navbar-menu.show {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .navbar-menu ul {
-    flex-direction: row;
-    margin-top: 10px;
-  }
-
-  .navbar-menu li {
-    margin: 0;
-  }
-
-  .navbar-menu a {
-    padding: 10px 20px;
-  }
-}
 /* Estilos para enlaces de navegación en estado hover */
 .navbar a:hover {
   background-color: #262EC9; /* Color de fondo al pasar el cursor */
   color: white; /* Color de texto */
   border-radius: 20px; /* Bordes redondeados */
   padding: 12px 14px; /* Ajuste de padding para mantener el tamaño */
-  transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.3s ease, padding 0.3s ease;
 }
 
 body, .main-page {
@@ -107,6 +37,29 @@ body, .main-page {
   padding-top: 10px;
 }
 
+.nav-link {
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 12px 14px; /* Ajuste de padding para mantener el tamaño */
+}
+
+.nav-link-button {
+  background-color: transparent;
+  color: white;
+  width: 150px;
+  font-size: 1rem;
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-link-button:hover {
+  background-color: #262EC9;
+  color: white;
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 6px 14px; /* Ajuste de padding para mantener el tamaño */
+}
 
 .main-content img {
   max-width: 100%;
@@ -209,6 +162,7 @@ body, .main-page {
 
 .navbar-text-logo {
   color: white; /* Color del texto */
+  font-family: 'IBM Plex Mono', monospace;
   font-weight: bold; /* Ajusta el grosor del texto */
   padding-left: 10px; /* Ajusta la separación entre el logo y el texto */
 }
@@ -783,32 +737,6 @@ body, .main-page {
   z-index: -1;
 }
 
-.shadow-side {
-  width: 11.25%; /* Asegúrate de que el ancho sea el adecuado para tus outfits */
-  height: 50px; /* Altura para darle la forma elíptica a la sombra */
-  background-color: rgba(10, 10, 62, 0.358); /* Ajusta los valores rgba para el color y transparencia */
-  border-radius: 50%;
-  margin-top: -10px; /* Aumenta el margen para bajar la sombra */
-  position: absolute; /* Cambia a posición absoluta para controlar mejor la ubicación */
-  bottom: 212px; /* Posiciona la sombra debajo del outfit */
-  left: 22%;
-  transform: translateX(0%) scaleX(1.5); /* Centra y estira la sombra horizontalmente */
-  z-index: -1;
-}
-
-.outfit-shadow-side {
-  width: 11.25%; /* Asegúrate de que el ancho sea el adecuado para tus outfits */
-  height: 50px; /* Altura para darle la forma elíptica a la sombra */
-  background-color: rgba(10, 10, 62, 0.358); /* Ajusta los valores rgba para el color y transparencia */
-  border-radius: 50%;
-  margin-top: -10px; /* Aumenta el margen para bajar la sombra */
-  position: absolute; /* Cambia a posición absoluta para controlar mejor la ubicación */
-  bottom: 212px; /* Posiciona la sombra debajo del outfit */
-  left: 68.3%;
-  transform: translateX(0%) scaleX(1.5); /* Centra y estira la sombra horizontalmente */
-  z-index: -1;
-}
-
 
 .kosmo-head {
   /* Ajusta estos estilos según necesites */
@@ -946,33 +874,6 @@ body, .main-page {
     z-index: -1;
   }
   
-  .shadow-side {
-    width: 13%; /* Asegúrate de que el ancho sea el adecuado para tus outfits */
-    height: 20px; /* Altura para darle la forma elíptica a la sombra */
-    background-color: rgba(10, 10, 62, 0.358); /* Ajusta los valores rgba para el color y transparencia */
-    border-radius: 50%;
-    margin-top: -10px; /* Aumenta el margen para bajar la sombra */
-    position: absolute; /* Cambia a posición absoluta para controlar mejor la ubicación */
-    bottom: 192px; /* Posiciona la sombra debajo del outfit */
-    left: 19%;
-    transform: translateX(0%) scaleX(1.5); /* Centra y estira la sombra horizontalmente */
-    z-index: -1;
-  }
-  
-  .outfit-shadow-side {
-    width: 13%; /* Asegúrate de que el ancho sea el adecuado para tus outfits */
-    height: 20px; /* Altura para darle la forma elíptica a la sombra */
-    background-color: rgba(10, 10, 62, 0.358); /* Ajusta los valores rgba para el color y transparencia */
-    border-radius: 50%;
-    margin-top: -10px; /* Aumenta el margen para bajar la sombra */
-    position: absolute; /* Cambia a posición absoluta para controlar mejor la ubicación */
-    bottom: 192px; /* Posiciona la sombra debajo del outfit */
-    left: 70%;
-    transform: translateX(0%) scaleX(1.5); /* Centra y estira la sombra horizontalmente */
-    z-index: -1;
-  }
-  
-
   .customization-description {
     font-size: 0.7rem; /* Tamaño más pequeño para la descripción y la nota de servicio en dispositivos móviles */
     margin-top: 6rem; /* Espacio por encima de la sección de personalización */
