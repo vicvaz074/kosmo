@@ -301,7 +301,7 @@ function MainPage() {
               Incluye todo lo del Tier Básico. 
             </p>
             <p className="card-text">
-              Personalización de la imagen de tu bot. Varios bots con personalidades únicas. Acceso mejorado a herramientas de análisis.
+              Personalización de la imagen de tu bot. 
             </p>
             <p className="card-text">
               Varios bots con personalidades únicas.
