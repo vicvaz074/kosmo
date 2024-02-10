@@ -30,9 +30,7 @@
             brightness(110%); /* Aumenta el brillo para destacar el logo */
   }
   
-  
-  
-  
+
   .dark-mode .nav-link-button {
     background-color: transparent;
     color: white;
@@ -88,7 +86,7 @@
     color: #262EC9!important;
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 20px;
     text-transform: uppercase;
     font-weight: bold;
     margin: 20px 0;
