@@ -280,7 +280,7 @@
   padding: 0 !important;
 }
 
-.dark-mode .strategy-title, .video-title-along {
+.dark-mode .strategy-title {
   color: white; /* Color azul */
   font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
   font-weight: 700;
