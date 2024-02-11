@@ -329,7 +329,7 @@ function MainPage() {
         <div className="card">
           <img src={kosmoBasic} className="card-img-top" alt="Kosmo Basic"/>
           <div className="card-body">
-            <h5 className="card-title">KOSMO TIER BÁSICO  -     $29/mes</h5>
+            <h5 className="card-title">KOSMO TIER BÁSICO  - $29 dolares/mes</h5>
             <p className="card-text">
               Asistencia 24/7 por Kosmo IA. Un bot con la personalidad por defecto para comunicación y ventas.
             </p>
@@ -343,7 +343,7 @@ function MainPage() {
         <div className="card">
           <img src={kosmoOxxo} className="card-img-top" alt="Kosmo Oxxo" />
           <div className="card-body">
-            <h5 className="card-title">KOSMO TIER INTERMEDIO - $79/mes</h5>
+            <h5 className="card-title">KOSMO TIER INTERMEDIO - $79 dolares/mes</h5>
             <p className="card-text">
               Incluye todo lo del Tier Básico. 
             </p>
@@ -363,7 +363,7 @@ function MainPage() {
         <div className="card">
           <img src={kosmoConstructor} className="card-img-top" alt="Kosmo Constructor" />
           <div className="card-body">
-            <h5 className="card-title">KOSMO TIER PREMIUM - $129/mes</h5>
+            <h5 className="card-title">KOSMO TIER PREMIUM - $129 dolares/mes</h5>
             <p className="card-text">
               Todos los beneficios de los Tiers anteriores. 
             </p>
