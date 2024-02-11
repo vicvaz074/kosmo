@@ -77,6 +77,10 @@ function App() {
   const [navExpanded, setNavExpanded] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const { darkMode, toggleDarkMode } = useDarkMode();
+  const closeNav = () => {
+    setNavExpanded(false);
+  };
+  
   const chatButtonRef = useRef(null); // Referencia al botón
 
   const handleMouseMove = (event) => {
@@ -172,36 +176,36 @@ function App() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          </div>
-          <div className={`collapse navbar-collapse ${navExpanded ? 'show' : ''}`} id="navbarNav">
-            <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/#inicio">Inicio</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/#nosotros">Nosotros</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/#planes">Planes</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/#contactanos">Contáctanos</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/login">Login</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/registrarse">Registrarse</NavLink>
-              </li>
-              <li className="nav-item">
+        </div>
+        <div className={`collapse navbar-collapse ${navExpanded ? 'show' : ''}`} id="navbarNav">
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item" onClick={closeNav}>
+              <NavLink className="nav-link" to="/#inicio">Inicio</NavLink>
+            </li>
+            <li className="nav-item" onClick={closeNav}>
+              <NavLink className="nav-link" to="/#nosotros">Nosotros</NavLink>
+            </li>
+            <li className="nav-item" onClick={closeNav}>
+              <NavLink className="nav-link" to="/#planes">Planes</NavLink>
+            </li>
+            <li className="nav-item" onClick={closeNav}>
+              <NavLink className="nav-link" to="/#contactanos">Contáctanos</NavLink>
+            </li>
+            <li className="nav-item" onClick={closeNav}>
+              <NavLink className="nav-link" to="/login">Login</NavLink>
+            </li>
+            <li className="nav-item" onClick={closeNav}>
+              <NavLink className="nav-link" to="/registrarse">Registrarse</NavLink>
+            </li>
+            <li className="nav-item" onClick={closeNav}>
               <div> {/* Ajusta el padding o el width según necesites */}
-              <button className="nav-link-button" onClick={toggleDarkMode}>
-                Modo Oscuro
-              </button>
-            </div>
-              </li>
-            </ul>
-          </div>
+                <button className="nav-link-button" onClick={toggleDarkMode}>
+                  Modo Oscuro
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
       </nav>
       <Routes>
         <Route path="/" element={<MainPage />} />
