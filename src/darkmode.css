@@ -80,18 +80,34 @@
     z-index: 1000;
   }
 
-  .dark-mode .button-talk-kosmo {
-    background-color: #ffffff !important;
-    color: #262EC9!important;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin: 20px 0;
-    cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+/* Ajustes para el modo oscuro */
+.dark-mode .button-talk-kosmo {
+  background-color: #ffffff;
+  color: #262EC9;
+  box-shadow: 0 0 8px #ffffff;
+}
+
+.dark-mode .button-talk-kosmo:hover {
+  background-color: #ddd; /* Un gris claro para el hover en modo oscuro */
+  box-shadow: 0 0 12px #ddd;
+}
+
+/* Ajuste de la animación para el modo oscuro */
+@keyframes pulse-dark {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 8px #ffffff;
   }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px #ffffff;
+  }
+}
+
+/* Aplicar la animación ajustada cuando el modo oscuro está activo */
+.dark-mode .button-talk-kosmo {
+  animation: pulse-dark 2.5s infinite;
+}
   
   .dark-mode .navbar-text-logo {
     color: white; /* Color del texto */

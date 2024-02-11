@@ -123,7 +123,6 @@ body, .main-page {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-
 .button-talk-kosmo {
   background-color: #262EC9;
   color: white;
@@ -134,13 +133,29 @@ body, .main-page {
   font-weight: bold;
   margin: 20px 0;
   cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 8px #262EC9;
+  animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 8px #262EC9;
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px #262EC9;
+  }
 }
 
 .button-talk-kosmo:hover {
   background-color: #1a1f70;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 12px #1a1f70;
 }
+
 
 @keyframes fadeInUp {
   from {
