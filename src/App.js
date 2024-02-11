@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useDarkMode } from './DarkModeContext';
@@ -77,6 +77,49 @@ function App() {
   const [navExpanded, setNavExpanded] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const { darkMode, toggleDarkMode } = useDarkMode();
+  const chatButtonRef = useRef(null); // Referencia al botón
+
+  const handleMouseMove = (event) => {
+    if (chatButtonRef.current) {
+      const { top, left, width, height } = chatButtonRef.current.getBoundingClientRect();
+      const centerX = left + width / 2;
+      const centerY = top + height / 2;
+      const deltaX = event.clientX - centerX;
+      const deltaY = event.clientY - centerY;
+
+      // Calcular el ángulo en radianes y convertirlo a grados
+      let angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+
+      // Ajustar el ángulo para la imagen invertida y mantenerlo en el semicírculo izquierdo
+      if (angle < 0) {
+        angle = (angle + 360) % 360; // Convertir ángulos negativos a positivos
+      }
+      if (angle > 0 && angle < 360) {
+        // El ratón está a la izquierda de la imagen
+        angle = angle - 180; // Esto invertirá el ángulo para que la imagen "mire" hacia la izquierda
+      } else {
+        // El ratón está a la derecha de la imagen
+        if (angle <= 90) {
+          angle = 90; // Límite superior para el movimiento a la izquierda
+        } else {
+          angle = -90; // Límite inferior para el movimiento a la derecha
+        }
+      }
+
+      // Establecer el estilo de transformación directamente en el botón
+      chatButtonRef.current.style.transform = `rotate(${angle}deg)`;
+    }
+  };
+
+  useEffect(() => {
+    // Agregar el controlador de eventos al mover el mouse en el documento
+    document.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      // Limpiar el evento al desmontar el componente
+      document.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
 
 
 
@@ -166,8 +209,8 @@ function App() {
         <Route path="/registrarse" element={<RegisterComponent />} />
         <Route path="/tryme" element={<KosmoTryComponent />} />
       </Routes>
-      <button className="chat-button-modal" onClick={() => setShowModal(true)}>
-        <img src={kosmoBotBasico} alt="Chat con Kosmo" />
+      <button ref={chatButtonRef} className="chat-button-modal" onClick={() => setShowModal(true)}>
+        <img src={head} alt="Chat con Kosmo" style={{ transform: 'scaleX(-1)' }} />
       </button>
       {showModal && <KosmoModalBot onClose={() => setShowModal(false)} />}
     </Router>
@@ -239,7 +282,7 @@ function MainPage() {
           <img src={kosmoLogo} alt="Kosmo Logo" className="kosmo-logo" style={{ width: '900px' }} />
           <h2>UN CHATBOT DE OTRO PLANETA</h2>
           <p>Únete y conócelo</p>
-          <button className="button" onClick={() => navigate('/tryme')}>Hablar con Kosmo</button>
+          <button className="button-talk-kosmo" onClick={() => navigate('/tryme')}>Hablar con Kosmo</button>
         </div>
         <div className="space-container">
           <div className="stars-container"></div>

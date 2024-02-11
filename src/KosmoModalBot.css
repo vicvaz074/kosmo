@@ -31,19 +31,92 @@
 
 .chat-button-modal {
   position: fixed;
-  right: 15px;
-  bottom: 40px;
-  z-index: 1000; /* Asegúrate de que esté sobre otros elementos */
-  border: none; /* Ajusta según tu diseño */
-  background-color: #262EC9; 
+  right: 20px;
+  bottom: 60px;
+  z-index: 1000;
+  border: none;
+  background-color: #262EC9;
   cursor: pointer;
-  border-radius: 50%; /* Hace el botón completamente circular */
-  display: flex; /* Centra la imagen dentro del botón */
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-  width: 70px; /* Ajusta al tamaño deseado para el círculo */
-  height: 70px; /* Ajusta al tamaño deseado para el círculo */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  box-shadow: 0 0 15px rgba(38, 46, 201, 0.75); /* Brillo alrededor del botón */
+  transition: transform 0.3s, box-shadow 0.3s; /* Suaviza las transiciones de transformación y sombra */
 }
+
+.dark-mode .chat-button-modal {
+  position: fixed;
+  right: 20px;
+  bottom: 60px;
+  z-index: 1000;
+  border: none;
+  background-color: #262EC9;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.75); /* Brillo alrededor del botón */
+  transition: transform 0.3s, box-shadow 0.3s; /* Suaviza las transiciones de transformación y sombra */
+}
+
+.dark-mode .chat-button-modal:hover,
+.chat-button-modal:focus { /* Efecto al pasar el mouse y al enfocar */
+  transform: scale(1.1) !important; /* Aumenta ligeramente el tamaño */
+  box-shadow: 0 0 25px rgb(255, 255, 255) !important; /* Brillo más intenso */
+}
+
+.chat-button-modal:hover,
+.chat-button-modal:focus { /* Efecto al pasar el mouse y al enfocar */
+  transform: scale(1.1)!important; /* Aumenta ligeramente el tamaño */
+  box-shadow: 0 0 25px rgba(38, 46, 201, 1)!important; /* Brillo más intenso */
+}
+
+.chat-button-modal:active { /* Efecto al hacer clic */
+  transform: scale(0.9); /* Reduce ligeramente el tamaño */
+}
+
+.dark-mode .chat-button-modal:active {
+  transform: scale(0.9); /* Reduce ligeramente el tamaño */
+}
+
+
+/* Animación de pulsación para el modo normal */
+@keyframes pulse-animation {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(38, 46, 201, 0.75);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(38, 46, 201, 1);
+  }
+}
+
+/* Animación de pulsación para el modo oscuro */
+@keyframes pulse-animation-dark {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.75);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 1);
+  }
+}
+
+.chat-button-modal {
+  /* Estilos base del botón */
+  animation: pulse-animation 2s infinite ease-in-out; /* Aplica la animación de pulsación por defecto */
+}
+
+.dark-mode .chat-button-modal {
+  /* Estilos adicionales para el botón en modo oscuro */
+  animation: pulse-animation-dark 2s infinite ease-in-out; /* Aplica la animación de pulsación para modo oscuro */
+}
+
+
 
 .chat-button-modal img {
   width: 50px; /* Ajusta según el tamaño deseado para el icono */

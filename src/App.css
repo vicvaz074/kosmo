@@ -123,6 +123,25 @@ body, .main-page {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+
+.button-talk-kosmo {
+  background-color: #262EC9;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-talk-kosmo:hover {
+  background-color: #1a1f70;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 @keyframes fadeInUp {
   from {
     transform: translateY(20px);
