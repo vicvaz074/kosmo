@@ -138,12 +138,6 @@
   }
   
   /* Cambios adicionales para elementos como botones, enlaces, etc. */
-  .dark-mode .button,
-  .dark-mode a {
-    color: var(--text-color);
-    background-color: var(--navbar-hover-bg-color);
-  }
-  
   .dark-mode .button:hover {
     background-color: var(--primary-color);
     color: var(--navbar-hover-text-color);
@@ -267,4 +261,21 @@
   }
 
 
-  
+  /* Estilos existentes para .navbar-text-logo en modo oscuro */
+.dark-mode .navbar-text-logo {
+  color: white; /* Color del texto para modo oscuro */
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+/* Anular los estilos de hover generales para la navbar-brand específica en modo oscuro */
+.dark-mode .navbar-brand-link:hover,
+.dark-mode .navbar-brand-link:hover .navbar-text-logo,
+.dark-mode .navbar-brand-link:active .navbar-text-logo,
+.dark-mode .navbar-brand-link:focus .navbar-text-logo {
+  background-color: transparent !important;
+  color: white !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}

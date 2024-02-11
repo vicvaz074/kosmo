@@ -33,7 +33,7 @@
   position: fixed;
   right: 20px;
   bottom: 60px;
-  z-index: 1000;
+  z-index: 3;
   border: none;
   background-color: #262EC9;
   cursor: pointer;
@@ -51,7 +51,7 @@
   position: fixed;
   right: 20px;
   bottom: 60px;
-  z-index: 1000;
+  z-index: 3;
   border: none;
   background-color: #262EC9;
   cursor: pointer;

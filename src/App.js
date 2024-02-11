@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useDarkMode } from './DarkModeContext';
-import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, NavLink, useLocation } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import LoginComponent from './LoginComponent';
@@ -24,6 +23,9 @@ import outfitBlue from './assets/img/CONJUNTO_AZULV2.svg';
 import outfitYellow from './assets/img/CONJUNTO_AMARILLOV2.svg';
 import head from './assets/img/CABEZA.png';
 import KosmoModalBot from './KosmoModalBot';
+import { Link } from 'react-router-dom';
+
+
 
 const KosmoCustomizationComponent = () => {
   const [outfitIndex, setOutfitIndex] = useState(0);
@@ -71,6 +73,22 @@ const KosmoCustomizationComponent = () => {
     </div>
   );
 };
+
+const NavigationComponent = ({ setShowModal }) => {
+  const location = useLocation();
+  const hideButtonOnRoutes = ['/tryme']; // Añade aquí todas las rutas donde no quieres mostrar el botón
+
+  if (hideButtonOnRoutes.includes(location.pathname)) {
+    return null; // No renderiza nada si la ruta actual está en la lista de rutas para ocultar
+  }
+
+  return (
+    <button className="chat-button-modal" onClick={() => setShowModal(true)}>
+      <img src={head} alt="Chat con Kosmo" style={{ transform: 'scaleX(-1)' }} />
+    </button>
+  );
+};
+
 
 function App() {
   const [isHovering, setIsHovering] = useState(false);
@@ -153,19 +171,21 @@ function App() {
     <Router>
       <nav className={`navbar navbar-expand-lg fixed-top`}>
         <div className="container">
-          <div
-            className="navbar-brand"
-            onMouseEnter={() => setIsHovering(true)}
-            onMouseLeave={() => setIsHovering(false)}
-            onTouchStart={() => setIsHovering(true)}
-            onTouchEnd={() => setIsHovering(false)}
-          >
-            {isHovering ? (
-              <span className="navbar-text-logo">Kosmo</span>
-            ) : (
-              <img src={logo} alt="Logo Kosmo" className="brand-logo" />
-            )}
-          </div>
+          <Link to="/#inicio" className="navbar-brand-link">
+            <div
+              className="navbar-brand"
+              onMouseEnter={() => setIsHovering(true)}
+              onMouseLeave={() => setIsHovering(false)}
+              onTouchStart={() => setIsHovering(true)}
+              onTouchEnd={() => setIsHovering(false)}
+            >
+              {isHovering ? (
+                <span className="navbar-text-logo">Kosmo</span>
+              ) : (
+                <img src={logo} alt="Logo Kosmo" className="brand-logo" />
+              )}
+            </div>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -213,11 +233,10 @@ function App() {
         <Route path="/registrarse" element={<RegisterComponent />} />
         <Route path="/tryme" element={<KosmoTryComponent />} />
       </Routes>
-      <button ref={chatButtonRef} className="chat-button-modal" onClick={() => setShowModal(true)}>
-        <img src={head} alt="Chat con Kosmo" style={{ transform: 'scaleX(-1)' }} />
-      </button>
-      {showModal && <KosmoModalBot onClose={() => setShowModal(false)} />}
-    </Router>
+        {/* Componente para mostrar u ocultar el botón de chat */}
+        <NavigationComponent setShowModal={setShowModal} />
+        {showModal && <KosmoModalBot onClose={() => setShowModal(false)} />}
+      </Router>
     </div>
   );
 }
@@ -382,7 +401,7 @@ function MainPage() {
           <h2>¡SERVICIO COMPLETO DE PERSONALIZACIÓN!</h2>
           <KosmoCustomizationComponent />
           <p className="customization-description">
-            PUEDES ELEGIR ENTRE CAMBIAR SU ASPECTO, AGREGAR PROPS QUE FORTALEZCAN SU
+            PUEDES ELEGIR ENTRE CAMBIAR SU ASPECTO, AGREGAR PROPS QUE FORTALEZCAN SU <br />
             PERSONALIDAD O CAMBIAR EL ESTILO EN QUE ESTE SE COMUNICA
             <span className="service-notice">
               *Para acceder a todas estas funciones, asegúrate de contar con el servicio de pago adecuado.

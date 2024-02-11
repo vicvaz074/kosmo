@@ -21,7 +21,18 @@
   width: 62%; /* O el tamaño que necesites */
   height: auto; /* Para mantener la proporción */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 1200px; /* Establece un máximo ancho para pantallas grandes */
 }
+
+/* Para pantallas más grandes, puedes querer ajustar la posición o el tamaño */
+@media (min-width: 1921px) {
+  .login-container-background {
+    width: 35%; /* Ajusta el ancho como sea necesario */
+    max-width: 1400px; /* Ajusta el máximo ancho si es necesario */
+    /* Ajustes adicionales para la altura o la posición si son necesarios */
+  }
+}
+
 
 .login-container {
   display: flex;
@@ -127,8 +138,8 @@
 
 .login-robot {
   position: absolute;
-  transform: translateX(-115%);
-  bottom: -3.2rem;
+  transform: translateX(-140%);
+  bottom: -7rem;
   background-color: #262EC9;
   border: 10px solid white;
   border-radius: 50%;
@@ -138,13 +149,13 @@
   justify-content: center;
   align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 450px; /* Nuevo ancho para el círculo */
-  height: 450px; /* Nuevo alto para el círculo */
+  width: 500px; /* Nuevo ancho para el círculo */
+  height: 500px; /* Nuevo alto para el círculo */
 }
 
 .login-robot img {
-  max-width: 450px; /* Nuevo ancho máximo para la imagen */
-  max-height: 450px; /* Nuevo alto máximo para la imagen */
+  max-width: 650px; /* Nuevo ancho máximo para la imagen */
+  max-height: 650px; /* Nuevo alto máximo para la imagen */
   width: 100%; /* Esto hará que la imagen crezca para llenar el contenedor */
   height: auto; /* Esto mantendrá la proporción de la imagen */
 }

@@ -55,12 +55,15 @@ body, .main-page {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+
+
 .nav-link-button:hover {
   background-color: #262EC9;
   color: white;
   border-radius: 20px; /* Bordes redondeados */
   padding: 6px 14px; /* Ajuste de padding para mantener el tamaño */
 }
+
 
 .main-content img {
   max-width: 100%;
@@ -83,6 +86,36 @@ body, .main-page {
     font-size: 30px; /* Tamaño más pequeño para pantallas más pequeñas */
   }
 }
+
+/* Estilos existentes para .navbar-text-logo */
+.navbar-text-logo {
+  color: white; /* Color del texto */
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: bold; /* Ajusta el grosor del texto */
+  padding-left: 10px; /* Ajusta la separación entre el logo y el texto */
+}
+
+/* Anular los estilos de hover generales para la navbar-brand específica */
+.navbar-brand-link:hover,
+.navbar-brand-link:hover .navbar-text-logo,
+.navbar-brand-link:active .navbar-text-logo,
+.navbar-brand-link:focus .navbar-text-logo {
+  background-color: transparent !important; /* Elimina el color de fondo */
+  color: white !important; /* Hereda el color de texto del estado no-hover */
+  border-radius: 0 !important; /* Elimina los bordes redondeados */
+  padding: 0 !important; /* Elimina el padding */
+}
+
+/* Asegurarse de que los estilos no afecten a otros enlaces */
+.navbar a:not(.navbar-brand-link):hover {
+  background-color: #262ec9d6; /* Color de fondo al pasar el cursor */
+  color: white; /* Color de texto */
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 12px 14px; /* Ajuste de padding para mantener el tamaño */
+}
+
+
+
 
 
 
@@ -195,12 +228,6 @@ body, .main-page {
   }
 }
 
-.navbar-text-logo {
-  color: white; /* Color del texto */
-  font-family: 'IBM Plex Mono', monospace;
-  font-weight: bold; /* Ajusta el grosor del texto */
-  padding-left: 10px; /* Ajusta la separación entre el logo y el texto */
-}
 
 .navbar-toggler {
   border-color: #fff; /* Cambia al color que desees para el borde */
@@ -836,10 +863,11 @@ body, .main-page {
 
 .customization-description {
   color: #262EC9; /* Color azul */
+  white-space: pre-wrap;
   font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
   font-style: italic;
   margin-top: 2rem; /* Espacio por encima de la descripción */
-  font-size: 1.2rem; /* Tamaño de la descripción */
+  font-size: 1.6rem; /* Tamaño de la descripción */
 }
 
 .service-notice {
@@ -847,7 +875,7 @@ body, .main-page {
   color: #7AC943;
   font-family: 'IBM Plex Mono', monospace;
   font-style: italic; /* Estilo de fuente para la nota de servicio */
-  font-size: 0.85rem; /* Tamaño de la nota de servicio */
+  font-size: 0.98rem; /* Tamaño de la nota de servicio */
   margin-top: 1.5rem;
   margin-bottom: 3rem;
 }
