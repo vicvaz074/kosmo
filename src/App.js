@@ -21,6 +21,7 @@ import kosmoBotBasico from './assets/img/KOSMO_BOT_BASICO.svg';
 import outfitRed from './assets/img/CONJUNTO_ROJOV3.svg';
 import outfitBlue from './assets/img/CONJUNTO_AZULV2.svg';
 import outfitYellow from './assets/img/CONJUNTO_AMARILLOV2.svg';
+import thumbnail from './assets/img/thumbnail.png';
 import head from './assets/img/CABEZA.png';
 import KosmoModalBot from './KosmoModalBot';
 import { Link } from 'react-router-dom';
@@ -317,10 +318,35 @@ function MainPage() {
         <div id="nosotros" className={`section-nosotros ${darkMode ? 'dark-mode' : ''}`}>
           <h2 className="nosotros-title">¿QUIÉNES SOMOS? CONOCE NUESTRA HISTORIA Y ÚNETE A NUESTRA ESTRATEGIA</h2>
           <Carousel activeIndex={activeIndex} onSelect={handleSelect} interval={null}>
+          <Carousel.Item className="item-con-video-y-texto">
+              <div className="video-y-texto-container">
+                <div className="video-container">
+                  <h2 className="video-title-along">NUESTRA HISTORIA</h2>
+                  <video className="video-personalizado" controls poster={thumbnail}>
+                  <source src={aboutVideo} type="video/mp4" />
+                </video>
+                </div>
+                <div className="texto-al-lado">
+                  <h4 className="strategy-title">NUESTRA ESTRATEGIA TRIFÁSICA</h4>
+                  <div className="strategy-point-along">
+                  <h5>LA IMPORTANCIA DE LOS BOTS</h5>
+                  <p>En Kosmo, entendemos que los chatbots son más que simples programas...</p>
+                </div>
+                <div className="strategy-point-along">
+                  <h5>EL ORIGEN DE NUESTRA IDEA</h5>
+                  <p>Kosmo nace de necesidad clara...</p>
+                </div>
+                <div className="strategy-point-along">
+                  <h5>NUESTRO EQUIPO</h5>
+                  <p>Compuesto por innovadores, desarrolladores y creativos...</p>
+                </div>
+              </div>
+            </div>
+            </Carousel.Item>
             <Carousel.Item>
-              <video className="d-block w-100" controls>
-                <source src={aboutVideo} type="video/mp4" />
-              </video>
+            <video className="d-block w-100" controls poster={thumbnail}>
+              <source src={aboutVideo} type="video/mp4" />
+            </video>
             </Carousel.Item>
             <Carousel.Item>
               <div className="carousel-strategy-container">

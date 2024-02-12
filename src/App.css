@@ -466,7 +466,7 @@ body, .main-page {
 
 .carousel-item {
   min-height: 500px; /* Ajuste la altura según sea necesario */
-  background-color: #ececec; /* Color de fondo por si las imágenes o videos no cubren el área */
+  background-color: transparent; /* Color de fondo por si las imágenes o videos no cubren el área */
   border-radius: 25px;
 }
 
@@ -511,9 +511,148 @@ body, .main-page {
 }
 
 .strategy-point p {
-  color: #6c757d;
+  color: #000000;
   font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
   font-style: light;
+}
+
+/* Estilos específicos para el ítem con video y texto */
+.item-con-video-y-texto .video-y-texto-container {
+  display: flex;
+  height: 100%;
+}
+
+.video-title-along {
+  font-size: 1.4rem;
+  color: #262EC9; /* Color azul */
+  font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
+  margin-bottom: 1rem;
+}
+
+.item-con-video-y-texto .video-container {
+  width: 65%;
+  position: relative; /* Para el posicionamiento absoluto del título */
+  transform: translateX(7%);
+}
+
+.item-con-video-y-texto .video-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #fff; /* O el color que prefieras */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para el título */
+  padding: 10px 0; /* Ajuste según sea necesario */
+  z-index: 10; /* Asegura que el título esté sobre el video */
+}
+
+.item-con-video-y-texto .video-personalizado {
+  width: 100%;
+  height: 100%; /* Esto asegura que el video se escale con el contenedor */
+  object-fit: cover;
+  border-radius: 0px 0 0 0px;
+}
+
+.item-con-video-y-texto .texto-al-lado {
+  width: 40%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center; /* Centra el texto de los párrafos */
+}
+
+.texto-al-lado .strategy-title {
+  font-size: 1.4rem;
+  color: #262EC9; /* Color azul */
+  font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
+  margin-top: -1.39rem;
+  margin-bottom: 7rem;
+}
+/* Ajustes adicionales para asegurar que los párrafos estén centrados */
+.item-con-video-y-texto .strategy-point-along p {
+  margin: 0 auto; /* Centra el texto horizontalmente */
+  max-width: 100%; /* O el ancho que prefieras para limitar el ancho de los párrafos */
+}
+
+.strategy-point-along {
+  background-color: #F2F2F2;
+  border-radius: 0px;
+  transform: translateY(-25%) translateX(16%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
+  margin-bottom: 1rem;
+  padding: 1rem;
+  width: 80%;
+  min-height: 120px; /* Asegura que haya suficiente espacio para el texto */
+  text-align: left;
+}
+
+.strategy-point-along p {
+  color: #000000;
+  font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
+  font-style: light;
+}
+
+.strategy-point-along h5 {
+  color: #262EC9; /* Color azul */
+  font-family: 'IBM Plex Mono', monospace; /* Fuente IBM Plex Mono */
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+/* Estilos base para .item-con-video-y-texto */
+.item-con-video-y-texto .video-y-texto-container {
+  display: flex;
+  height: 100%;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) { /* Ajusta este valor según tus necesidades */
+  .item-con-video-y-texto .video-y-texto-container {
+    flex-direction: column; /* Cambia la dirección del flex para apilar los elementos */
+  }
+
+  .item-con-video-y-texto .texto-al-lado {
+    width: 90%; /* Hace que ambos elementos tomen el ancho completo */
+  }
+
+  .item-con-video-y-texto .video-container{
+    width: 90%; /* Hace que ambos elementos tomen el ancho completo */
+  }
+
+  .item-con-video-y-texto .texto-al-lado {
+    padding: 10px; /* Ajusta el padding para pantallas pequeñas */
+  }
+
+  .texto-al-lado .strategy-title,
+  .video-title-along {
+    font-size: 1.2rem; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+    transform: translateY(-10%) translateX(16%); /* Ajusta la posición para pantallas pequeñas */
+    width: 85%; /* Hace que el contenedor de puntos estratégicos tome el ancho completo */
+
+  }
+
+  .video-title-along {
+    font-size: 1.2rem; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    transform: translateY(-10%) translateX(6%); /* Ajusta la posición para pantallas pequeñas */
+    width: 85%; /* Hace que el contenedor de puntos estratégicos tome el ancho completo */
+
+  }
+
+  .strategy-point-along {
+    transform: translateY(-10%) translateX(16%); /* Ajusta la posición para pantallas pequeñas */
+    width: 85%; /* Hace que el contenedor de puntos estratégicos tome el ancho completo */
+  }
+}
+
+.carousel-indicators {
+  bottom: -50px; /* Ajusta la posición según sea necesario */
 }
 
 /* Estilos para mantener el icono blanco */
@@ -532,9 +671,9 @@ body, .main-page {
 /* Ajustar el tamaño del contenedor de las flechas */
 .carousel-control-prev, 
 .carousel-control-next {
-  width: 45px; /* Ajusta el ancho al mínimo necesario */
-  height: 45px; /* Ajusta la altura al mínimo necesario */
-  padding: 2px; /* Añade un poco de espacio alrededor del ícono para facilidad de clic */
+  width: 55px; /* Ajusta el ancho al mínimo necesario */
+  height: 55px; /* Ajusta la altura al mínimo necesario */
+  padding: 10px; /* Añade un poco de espacio alrededor del ícono para facilidad de clic */
 }
 
 /* Ajustar la posición de las flechas si es necesario */
@@ -542,12 +681,14 @@ body, .main-page {
 .carousel-control-next {
   top: 50%; /* Centra las flechas verticalmente respecto al carrusel */
   transform: translateY(-50%); /* Asegura el centrado exacto */
+  
+  
 }
 
 .carousel-control-prev-icon, 
 .carousel-control-next-icon {
-  width: 35px; /* Ajusta según el tamaño deseado del ícono */
-  height: 35px; /* Ajusta según el tamaño deseado del ícono */
+  width: 105px; /* Ajusta según el tamaño deseado del ícono */
+  height: 105px; /* Ajusta según el tamaño deseado del ícono */
 }
 
 
@@ -685,7 +826,7 @@ body, .main-page {
 }
 
 .about-video, .section-nosotros, .planes-section {
-    max-width: 1200px; /* o el ancho máximo que prefieras */
+    max-width: 1330px; /* o el ancho máximo que prefieras */
     margin-left: auto;
     margin-right: auto;
     padding: 20px; /* Ajusta el relleno según sea necesario */
