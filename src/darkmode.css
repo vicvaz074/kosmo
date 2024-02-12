@@ -286,3 +286,14 @@
   font-weight: 700;
 }
 
+
+.dark-mode .carousel-control-prev-icon,
+.dark-mode .carousel-control-next-icon {
+  filter: invert(0%); /* Mantiene el icono blanco */
+}
+
+.dark-mode .carousel-control-prev:hover .carousel-control-prev-icon,
+.dark-mode .carousel-control-next:hover .carousel-control-next-icon {
+  filter: invert(0%); /* Hace el icono ligeramente más oscuro al pasar el cursor */
+  cursor: pointer; /* Cambia el cursor a un puntero para indicar interactividad */
+}
