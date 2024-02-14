@@ -348,11 +348,6 @@ function MainPage() {
             </div>
             </Carousel.Item>
             <Carousel.Item>
-            <video className="d-block w-100" controls poster={thumbnail}>
-              <source src={aboutVideo} type="video/mp4" />
-            </video>
-            </Carousel.Item>
-            <Carousel.Item>
               <div className="carousel-strategy-container">
                 <h4 className="strategy-title">NUESTRA ESTRATEGIA TRIFÁSICA</h4>
                 <div className="strategy-point">
