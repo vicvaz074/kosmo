@@ -104,7 +104,10 @@ body, .main-page {
   color: white !important; /* Hereda el color de texto del estado no-hover */
   border-radius: 0 !important; /* Elimina los bordes redondeados */
   padding: 0 !important; /* Elimina el padding */
+  text-decoration: none !important; /* Esto eliminará la subraya */
 }
+
+
 
 /* Asegurarse de que los estilos no afecten a otros enlaces */
 .navbar a:not(.navbar-brand-link):hover {

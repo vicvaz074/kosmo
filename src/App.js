@@ -90,9 +90,10 @@ function App() {
 const ChatButton = ({ setShowModal }) => {
   const location = useLocation();
   const chatButtonRef = useRef(null);
+  const isMobile = window.innerWidth <= 768;
 
   const handleMouseMove = (event) => {
-    if (chatButtonRef.current) {
+    if (!isMobile && chatButtonRef.current) {
       const { top, left, width, height } = chatButtonRef.current.getBoundingClientRect();
       const centerX = left + width / 2;
       const centerY = top + height / 2;
@@ -124,14 +125,19 @@ const ChatButton = ({ setShowModal }) => {
   };
 
     useEffect(() => {
-      // Agregar el controlador de eventos al mover el mouse en el documento
-      document.addEventListener('mousemove', handleMouseMove);
-
+      if (!isMobile) {
+        // Agregar el controlador de eventos al mover el mouse en el documento solo si no es móvil
+        document.addEventListener('mousemove', handleMouseMove);
+      }
+  
       return () => {
-        // Limpiar el evento al desmontar el componente
-        document.removeEventListener('mousemove', handleMouseMove);
+        if (!isMobile) {
+          // Limpiar el evento al desmontar el componente solo si no es móvil
+          document.removeEventListener('mousemove', handleMouseMove);
+        }
       };
-    }, []);
+    // Añadir isMobile a la lista de dependencias del efecto para volver a aplicarlo si cambia
+    }, [isMobile]);
 
     // Determina si el botón debe mostrarse basado en la ruta
     const isVisible = location.pathname !== '/tryme';
