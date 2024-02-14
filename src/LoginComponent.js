@@ -23,40 +23,46 @@ const LoginComponent = () => {
 
   return (
     <div className={`login-wrapper ${darkMode ? 'dark-mode' : ''}`}> 
-      <img src={loginContainerBackground} alt="Fondo" className="login-container-background" />
-      <div className="login-panel">
-        <h1>INICIA SESIÓN EN TU CUENTA</h1>
-        <form onSubmit={handleSubmit} className="login-form">
-          <div className="input-group">
-            <img src={loginUserIcone} alt="User Icon" className="input-icon" />
-            <input
-              type="text"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              placeholder="Usuario"
-              className="input-field"
-            />
-          </div>
-          <div className="input-group">
-            <img src={loginPasswordIcone} alt="Password Icon" className="input-icon" />
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              placeholder="Contraseña"
-              className="input-field"
-            />
-          </div>
-          <button type="submit" className='loginButton'>Iniciar Sesión</button>
-          <p className="login-register-link">
-            ¿No trabajas con Kosmo? <span onClick={() => navigate('/registrarse')}>Regístrate aquí</span>
-          </p>
-          <div className="login-robot">
-            <img src={loginBasicBot} alt="Kosmo Bot" className="floating-robot" />
-          </div>
-        </form>
+        <div className="login-panel-wrapper">
+        <div className="login-panel">
+          <div className="login-content">
+          <h1>INICIA SESIÓN EN TU CUENTA</h1>
+          <form onSubmit={handleSubmit} className="login-form">
+            <div className="input-group">
+              <img src={loginUserIcone} alt="User Icon" className="input-icon" />
+              <input
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                placeholder="Usuario"
+                className="input-field"
+              />
+            </div>
+            <div className="input-group">
+              <img src={loginPasswordIcone} alt="Password Icon" className="input-icon" />
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                placeholder="Contraseña"
+                className="input-field"
+              />
+            </div>
+            <button type="submit" className='loginButton'>Iniciar Sesión</button>
+            <p className="login-register-link">
+              ¿No trabajas con Kosmo? <span onClick={() => navigate('/registrarse')}>Regístrate aquí</span>
+            </p>
+            <div className="login-robot">
+              <img src={loginBasicBot} alt="Kosmo Bot" className="floating-robot" />
+            </div>
+            </form>
+          </div>  
+        </div>
+      </div>
+      <div className="login-robot-big">
+        <img src={loginBasicBot} alt="Kosmo Bot" className="floating-robot" />
       </div>
     </div>
   );
