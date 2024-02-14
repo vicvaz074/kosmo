@@ -74,6 +74,9 @@ const RegisterComponent = () => {
       <div className="register-robot-big">
         <img src={registerBasicBot} alt="Kosmo Bot" className="floating-robot" />
       </div>
+      <div className="footer">
+        <p>© Kosmo. Todos los derechos reservados.</p>
+      </div>
     </div>
   );
 };

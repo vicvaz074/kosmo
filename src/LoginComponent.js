@@ -64,6 +64,9 @@ const LoginComponent = () => {
       <div className="login-robot-big">
         <img src={loginBasicBot} alt="Kosmo Bot" className="floating-robot" />
       </div>
+      <div className="footer">
+        <p>© Kosmo. Todos los derechos reservados.</p>
+      </div>
     </div>
   );
 };

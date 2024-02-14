@@ -75,20 +75,6 @@ const KosmoCustomizationComponent = () => {
   );
 };
 
-const NavigationComponent = ({ setShowModal }) => {
-  const location = useLocation();
-  const hideButtonOnRoutes = ['/tryme']; // Añade aquí todas las rutas donde no quieres mostrar el botón
-
-  if (hideButtonOnRoutes.includes(location.pathname)) {
-    return null; // No renderiza nada si la ruta actual está en la lista de rutas para ocultar
-  }
-
-  return (
-    <button className="chat-button-modal" onClick={() => setShowModal(true)}>
-      <img src={head} alt="Chat con Kosmo" style={{ transform: 'scaleX(-1)' }} />
-    </button>
-  );
-};
 
 
 function App() {
@@ -100,7 +86,10 @@ function App() {
     setNavExpanded(false);
   };
   
-  const chatButtonRef = useRef(null); // Referencia al botón
+  
+const ChatButton = ({ setShowModal }) => {
+  const location = useLocation();
+  const chatButtonRef = useRef(null);
 
   const handleMouseMove = (event) => {
     if (chatButtonRef.current) {
@@ -134,15 +123,25 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    // Agregar el controlador de eventos al mover el mouse en el documento
-    document.addEventListener('mousemove', handleMouseMove);
+    useEffect(() => {
+      // Agregar el controlador de eventos al mover el mouse en el documento
+      document.addEventListener('mousemove', handleMouseMove);
 
-    return () => {
-      // Limpiar el evento al desmontar el componente
-      document.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
+      return () => {
+        // Limpiar el evento al desmontar el componente
+        document.removeEventListener('mousemove', handleMouseMove);
+      };
+    }, []);
+
+    // Determina si el botón debe mostrarse basado en la ruta
+    const isVisible = location.pathname !== '/tryme';
+
+    return isVisible ? (
+      <button ref={chatButtonRef} className="chat-button-modal" onClick={() => setShowModal(true)}>
+        <img src={head} alt="Chat con Kosmo" style={{ transform: 'scaleX(-1)' }} />
+      </button>
+    ) : null;
+};
 
 
 
@@ -234,10 +233,9 @@ function App() {
         <Route path="/registrarse" element={<RegisterComponent />} />
         <Route path="/tryme" element={<KosmoTryComponent />} />
       </Routes>
-        {/* Componente para mostrar u ocultar el botón de chat */}
-        <NavigationComponent setShowModal={setShowModal} />
-        {showModal && <KosmoModalBot onClose={() => setShowModal(false)} />}
-      </Router>
+      <ChatButton setShowModal={setShowModal} />
+      {showModal && <KosmoModalBot onClose={() => setShowModal(false)} />}
+    </Router>
     </div>
   );
 }

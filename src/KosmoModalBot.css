@@ -33,7 +33,7 @@
   position: fixed;
   right: 20px;
   bottom: 60px;
-  z-index: 3;
+  z-index: 1050;
   border: none;
   background-color: #262EC9;
   cursor: pointer;
@@ -51,7 +51,7 @@
   position: fixed;
   right: 20px;
   bottom: 60px;
-  z-index: 3;
+  z-index: 1050;
   border: none;
   background-color: #262EC9;
   cursor: pointer;
@@ -134,7 +134,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1050; /* Asegúrate de que el modal está sobre otros elementos. */
+  z-index: 4; /* Asegúrate de que el modal está sobre otros elementos. */
 }
 
 .modalContent {

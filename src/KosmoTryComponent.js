@@ -230,6 +230,9 @@ const KosmoTryComponent = () => {
           </div>
         )}
       </div>
+      <div className="footer">
+          <p>© Kosmo. Todos los derechos reservados.</p>
+        </div>
     </div>
   );
 };
